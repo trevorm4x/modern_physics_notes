@@ -1,0 +1,280 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{problemnumber}\setcounter{problemnumber}{1}
+\titlespacing\section{0pt}{10pt}{0pt}   % Spacing between Problems
+\titlespacing\subsection{0pt}{5pt}{0pt} % Spacing between Parts
+\newcommand{\problem}[1][-1]{
+    \setcounter{partnumber}{1}
+    \ifnum#1>0
+        \setcounter{problemnumber}{#1}
+    \fi
+    \section*{Problem \arabic{problemnumber}}
+    \stepcounter{problemnumber}
+}
+
+\newcounter{partnumber}\setcounter{partnumber}{1}
+\newcommand{\ppart}[1][-1]{
+    \ifnum#1>0
+        \setcounter{partnumber}{#1}
+    \fi
+    \subsection*{Part \parttype{partnumber}}
+    \stepcounter{partnumber}
+}
+
+\newenvironment{question}{
+    \color{gray}\itshape
+    \vspace{5pt}
+    \begin{tabular}{|p{0.97\linewidth}}
+}{
+    \end{tabular}\\[5pt]
+}
+
+
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength\parindent{0pt}
+\setlength\headheight{30pt}
+\headsep=0.25in
+\pagestyle{fancy}
+\lhead{\ifthenelse{\thepage=1}
+    {\textbf{Trevor Smith} \\ \textbf{\writeday}}
+}
+\chead{\ifthenelse{\thepage=1}
+    {\textbf{\huge{HOMEWORK \hwnumber}}}
+    {\textbf{\large{HOMEWORK \hwnumber}}}
+}
+\rhead{\ifthenelse{\thepage=1}
+    {\textbf{{\course}} \\ \textbf{Professor {\prof}}}
+}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+% \PARTTYPE:
+% \Alph   := "Part A, Part B,  ..."
+% \alph   := "Part a, Part b,  ..."
+% \arabic := "Part 1, Part 2,  ..."
+% \Roman  := "Part I, Part II, ..."
+\newcommand\parttype{\Roman}
+
+% \COURSE:
+\newcommand\course{PHYS 2303}
+
+% \HWNUMBER
+\newcommand\hwnumber{1}
+
+% \SEMESTER
+\newcommand\semester{Spring 2021}
+
+% \PROF
+\newcommand\prof{Skinnari}
+
+% \WRITEDAY
+% \today is date of compilation, replace if writing due date rather than write date
+\newcommand\writeday{\today}
+
+
+
+%  ------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+\problem
+\begin{question}
+Protons are incident on a copper foil that is 12 μm thick. Copper has a density of 8.95 g/cm³ and
+a molar mass of 63.5 g/mole. \\
+(a) What should the proton kinetic energy be in order for the distance of closest approach to
+equal the nuclear radius (5.0 fm)? \\
+(b) If the proton energy is 7.5 MeV, what is the impact parameter for scattering at 120 degrees? \\
+(c) What is the minimum distance between the proton and nucleus for this case? \\
+(d) What fraction of the protons is scattered beyond 120 degrees? \\
+\end{question}
+
+A) \\
+$$ d = \frac{1}{4\pi\epsilon_0}\frac{zZe^2}{K} $$
+z = 1\\
+Z = 29\\
+d = $ 5 fm $\\
+constant $= k_r\ (arbitrary\ name) =  \frac{1}{4\pi\epsilon_0} $ = 1.44 MeV * fm \\
+$$ K = k_r \frac{zZ}{d} = 8.352 MeV $$ \\
+
+B) \\
+$$ b = \frac{zZ}{2K} \frac{e^2}{4\pi\epsilon_0} cot(\theta/2) $$
+$\theta = $120 degrees\\
+$$ b = 1.44 MeV \cdot fm \cdot \frac{29}{2 \cdot 7.5} cot(60) = 1.607 fm $$
+
+C) \\
+From equation 6.18,
+$$ 1/2 mv^2 = 1/2 m\frac{v^2b^2}{r_{min}^2} + k_r \frac{zZ}{r_{min}} $$
+This can be rewritten to solve for $r_{min}$:
+$$ 0 = -1/2 mv^2 r_{min}^2 + k_r zZ r_{min} + 1/2mv^2b^2 $$
+Where \\
+$mv^2 = 7.5 MeV $ \\
+b = 1.607 fm \\
+z, Z = 1, 29 \\
+$k_r = 1.44 MeV\ fm$ \\
+We can work out the coefficients of the above quadratic equation. \\
+$a = -1/2 mv^2 = -3.75 $
+$b = k_r zZ = 1.44 *29 = 41.76 $
+$c = 1/2 mv^2b^2 = 1/2 * 7.5 * 1.607 = 6.026 $
+$$ r_{min} = \frac{-b +- \sqrt{b^2 - 4ac}}{2a} = \frac{-41.76 +- \sqrt{41.76^2 - 4 * -3.75 * 6.026}}{-7.5} = 11.28 fm $$
+
+D) \\
+Fraction that scatters above 120 degrees
+$$ f(\theta > 120) = nt\pi b^2 $$
+Where \\
+$ n = \frac{\rho N_A}{M} = 8.96 g/cm^3 * 6.022×10^{23} / 63.55 g/mol = 8.49 \cdot 10^{22} /cm^3 $\\
+t = $12 \mu m = 1.2 \cdot 10^{-3} cm$ \\
+$b = 1.607 fm = 1.607 \cdot 10^{-13} cm $
+
+$ f = 8.49 \cdot 10^{22} /cm^3 \cdot 1.2 \cdot 10^{-3} cm \cdot \pi \cdot (1.607 \cdot 10^{-13} cm)^2 = 8.26 \cdot 10^-6 $ 
+
+\newpage
+\problem
+\begin{question}
+Alpha particles with kinetic energy of 6.0 MeV are incident at a rate of 3.0×10⁷ per second on a
+gold foil of thickness 3.0 µm. A circular detector of diameter 1.0 cm is placed 12.0 cm from the
+foil at an angle of 30 degrees with the direction of the incident alpha particles. At what rate does
+the detector measure scattered alpha particles?
+\end{question}
+
+$$ N(\theta) = \frac{nt}{4r^2} \cdot \left(\frac{zZ}{2d}\right)^2\cdot \left(\frac{e^2}{4\pi\epsilon_0} \right)^2\cdot\frac{1}{sin^4(\theta/2)} $$
+where\\
+n = number of nuclei per unit volume = density per unit volume * atoms per gram = $ 19.3 g/cm^3 \cdot \frac{1 au}{1.6605 \cdot 10^{-24}g} \cdot \frac{1 atom}{196 au} = 5.93 \cdot 10^{22} /cm^3 $\\
+t = 3.0 $\mu m$ = .0003 cm \\
+r = 12 cm \\
+z, Z = 2, 79 \\
+K = 6.0 MeV \\
+$\theta = 30 $ degrees \\
+$$ N(\theta) = \frac{.0003cm \cdot 5.93 \cdot 10^{22} atoms/cm^3}{4 * (12cm)^2} \cdot \left(\frac{2 \cdot 79}{2*6.0 MeV}\right)^2\cdot \left( 1.44 MeV \cdot 10^{-13} cm \right)^2\cdot\frac{1}{sin^4(30 degrees/2)} = 2.474 \cdot 10^-5 /cm^2 $$
+This gives the probability for a particle to hit the detector per unit area. The area of the detector itself is $ \pi * .5cm^2 = 0.7854 cm^2 $, so the total probability for a given particle to hit the detector is $2.474 \cdot 10^{-5} \cdot 0.7854 = 1.94 \cdot 10^{-5}$. The rate of incident particles is $3.0 \cdot 10^7 particles/s$, therefore the rate of particles hitting the detector will be $3.0 \cdot 10^7 \cdot 1.94 \cdot 10^{-5} = 583$ particles per second.
+
+
+
+\newpage
+\problem
+\begin{question}
+One of the lines in the Brackett series (series limit = 1458 nm) has a wavelength of 1817 nm.
+What is the next higher and next lower wavelengths in the series? 
+\end{question}
+$$ \lambda = \lambda_{limit} \frac{n^2}{n^2-n_0^2}  $$
+$n_0 = 4$ for brackett series
+$$ 1817 nm = 1458 nm \frac{n^2}{n^2-16} $$
+$$ 0.802 = 1 - 16/n^2 $$
+$$ -0.198 = -16/n^2 $$
+$$ 5.06 = /n^2/16 $$
+n = 9 \\
+ \\
+Next higher n = 10 //
+
+$$ \lambda = 1458 \frac{10^2}{10^2-4^2}  $$
+$$ \lambda = 1458 \frac{10^2}{84} = 545 nm  $$
+
+Next lower n = 8 //
+
+$$ \lambda = 1458 \frac{8^2}{8^2-4^2}  $$
+$$ \lambda = 1458 \frac{8^2}{48} = 954 nm  $$
+
+\newpage
+\problem
+\begin{question}
+What is the ionization energy of: \\
+(a) the n = 3 level of hydrogen? \\
+(b) the n = 2 level of He+ (singly ionized helium)? \\
+(c) the n = 4 level of Li++ (doubly ionized lithium)? \\
+\end{question}
+A)\\
+The ionization energy is the same as the magnitude of the energy of the electron. 
+$$ |E_3| = \left| \frac{-13.6 eV}{9} \right| = 1.51 eV $$
+
+B)\\
+$$ |E_n| = \left| \frac{-13.6 eV Z^2}{n^2} \right| = \left| \frac{-13.6 eV 2^2}{2^2} \right| = 13.6 eV $$
+
+C)\\
+$$ |E_n| = \left| \frac{-13.6 eV Z^2}{n^2} \right| = \left| \frac{-13.6 eV 3^2}{4^2} \right| = 7.65 eV $$
+
+
+
+\newpage
+\problem
+\begin{question}
+In the n=4 state of hydrogen, find the electron's velocity, kinetic energy, and potential energy. 
+\end{question}
+$ r_n = a_0 n^2 = 0.0529 nm * 4^2 = 0.8464 nm $ \\
+The velocity of an electron is given by 
+$$ rmv = n \bar{h} \rightarrow v = \frac{n \bar{h}}{rm} $$
+Where \\
+r = 0.8464 nm\\
+n = 4\\
+$m = 0.511 MeV/c^2$
+$\bar{h} = 6.582 \cdot 10^-22 MeV s$
+$$ v = \frac{4 \cdot 6.582 \cdot 10^{-22} MeV\ s}{0.8464 nm \cdot 0.511 MeV/c^2} = .00182 c $$
+\\
+
+Kinetic energy is given by $K = \frac{1}{2m} \left(\frac{n\bar{h}}{r}\right)^2$
+$$K = \frac{1}{2 \cdot 0.511 MeV/c^2} \left(\frac{4 \cdot 6.582 \cdot 10^{-22} MeV\ s}{0.8464 nm} \right)^2 = 8.509 \cdot 10^{-7} MeV $$
+\\
+
+Potential energy is given by $U = \frac{-1}{4\pi\epsilon_0} \frac{e^2}{r} $\\
+Where\\
+e = $1.6 \cdot 10^{-19} C$
+U = -1.6967 eV
+
+
+\newpage
+\problem
+\begin{question}
+Adjacent wavelengths 72.90 nm and 54.00 nm are found in one series of transitions among the
+radiations emitted by doubly-ionized lithium. Find the value of n0 for this series and find the next
+wavelength in the series.
+\end{question}
+For transition from $n\ to\ n_0$ in lithium, where Z = 3:\\
+$$\lambda = \frac{hc}{\Delta E} = \frac{1240 eV \cdot nm}{(-13.6 eV)Z^2(1/n^2 - 1/n_0^2)} = 10.13 nm \cdot \frac{n^2n_0^2}{n^2-n_0^2} $$
+We can just plug in some numbers for $n_0$, and then drag n up and down to see what works. For $n_0$ = 1 the range of wavelengths for any n is very small. However, for n = 2 72.90 nm pops right out. \\
+
+$n_0$ = 2 and n = 3 for 72.9 nm, n = 4 for 54.0 nm. The next member of the series would be n = 5, giving 48.24 nm.
+
+
+\problem
+\begin{question}
+A beam of alpha particles with kinetic energy of 6.0 MeV impinges on a 1.0 $\mu$m thick silver foil.
+The beam current is 1.0 nA. How many alpha particles per second will be deflected by more than
+45 degrees? (For silver: Z = 47, density = 10500 kg/m³, and molar mass = 108 g/mole.) 
+\end{question}
+$$ b = \frac{zZ}{2K} \frac{e^2}{4\pi\epsilon_0} cot(\theta/2) $$
+Where \\
+$k_r = \frac{e^2}{4\pi\epsilon_0} = 1.44 MeV\ fm$ \\
+z = 2 \\
+Z = 47 \\
+$\theta = 45\ degrees$ \\
+K = 6.0 MeV \\
+b = $\frac{2*47}{2*6.0 MeV} \cdot k_r \cdot cot(22.5) = 27.23 fm$
+
+$$ f = nt\pi b^2 $$
+Where \\
+t = $1.0 \mu m = 1.0 \cdot 10^9 fm $\\
+$ n = \frac{\rho N_A}{M} = 1049 g/cm^3 * 6.022×10^{23} / 107.9 g/mol =  5.855 \cdot 10^{22} /cm^3 $\\
+$$ f = 1.364 \cdot 10^{-4} $$
+\\
+
+The beam current of 1.0 nA corresponds to 1 nC/s, or $1 \cdot 10^{-9} \cdot 6.241 \cdot 10^{18} = 6.241 \cdot 10^9$ charges per second. However, alpha particles have a charge of +2, so the number of particles per second will be half that, or $3.121 \cdot 10^9$particles/second.\\
+
+The number of particles per second deflected more than 45 degrees will be the fraction deflected times the total, or $3.121 \cdot 10^9 \cdot 1.364 \cdot 10^{-4} = 425,000 $ particles/second.
+
+
+\end{document}

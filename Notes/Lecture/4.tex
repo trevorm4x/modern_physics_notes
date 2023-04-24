@@ -1,0 +1,104 @@
+\documentclass[class=article,crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\begin{document}
+\lecture
+\subsection{Examples}
+\begin{question}[LHC Protons]
+	At CERN's Large Hadron Collider, protons are accelerated to a total energy of e = 6.5 TeV. What speed are the protons moving with?
+	\begin{answer}[Answer]
+		$$ m_p = 938 MeV/c^2 $$
+		$$ E = 6.5 TeV = 6.5 \cdot 10^6 $$
+		Note that $mp << E$
+		$$ E = mc^2(\gamma - 1) \rightarrow E = mc^2\gamma $$
+		$$ V = c\sqrt{1-\frac{mc^2}{E}} $$
+		$$ v = c \cdot \sqrt{1 - \frac{938 MeV}{6.5 \cdot 10^6 MeV}^2} $$
+		v = 99.99999c
+	\end{answer}
+\end{question}
+
+\newpage
+\begin{question}[Neutral K Meson]
+	A neutral K meson (mass 497.7 MeV/$c^2$) has a kinetic energy of 77 MeV. It decays into a pi meson (mass 139.6 $MeV/c^2$), moving in the direction of the origianl K meson with momentum 381.6 $MeV/c$, and another particle of uknown mass. 
+	\begin{enumerate}
+		\item What is the momentum & total relativistic energy of the unknown particle?
+	\begin{answer}[1]
+		$$ E^2 = (pc)^2 + (mc^2)^2 $$
+		\textbf{Momentum?}
+		$$ p_x = p_k - p_\pi, p_\pi = 381.6 MeV/c $$
+		$$ p_k = 1/c \sqrt{E_k^2 - (m_kc^2)^2} \rightarrow E_k = K_k + M_kc^2 = 66 MeV + 497.7 MeV/c^2 c^2 = 574.7 MeV $$
+		$$ p_k = 287.4 MeV/c $$
+		$$ p_x = 287.4 MeV/c - 381.6 MeV/c = -94.2 MeV/c $$
+		The unknown particle is moving in the opposite direction. \\
+		
+		\textbf{Total energy?} \\
+		$$ E_x = E_k - E_\pi = \sqrt{(381.6 MeV/c \cdot c)^2 + (139.6 MeV)^2} = 406.3 MeV $$
+		$$ E_x = 574.7 - 406.3 MeV = 168.5 MeV $$
+	\end{answer}
+		\item What is the mass of the unknown particle?
+	\begin{answer}[2]
+		$$m_x c^2 = \sqrt{E_x^2 - (pc)^2} $$
+		$$ = \sqrt{(168.4 Mev)^2 - (-94.2 MeV/c \cdot c)^2} \approx 139.6 MeV $$
+		The Mass is 139.6 MeV/$c^2$, which is another pion!
+	\end{answer}
+	\end{enumerate}
+\end{question}
+
+\newpage
+\begin{question}[Example of mass-energy equivalence -- fission]
+Decay of heavy radioactive nucleus at rest into several lighter particles, emitted with large kinetic energies (fission). 
+	Generally element : $\ce{^A_ZX}$ \\
+
+	Where:  \\
+	X = element name \\
+	Z = atomic number (\# of protons) \\
+	A = mass number (\# of protons + \# neutrons) \\
+
+	\begin{answer}[decay of an unexcited uranium nucleus at rest]
+		$$ \ce{^{236}_{92}U} \rightarrow \ce{^{143}_{55}Cs} + N\ce{^1_0n} $$
+	\end{answer}
+	\begin{answer}[How much energy is released per fission?]
+		Use: \\
+		$$ M(\ce{^{236}U)} = 236.045563u$$
+		$$ M(\ce{^{90}Rb)} = 89.314811u$$
+		$$ M(\ce{^{143}Cs)} = 142.927220u$$
+		$$ m_n = 1.008665 u $$
+		Total re. energy: $E = E_0 + k $ \\
+		Initial: $E(U) = E_0(U) + K(U) = E_0(U)$ \\
+		Final: $E_{final} = E_0(Rb) + E_0(Cs) + 3 \cdot E_o(U) + K(Rb) + K(Cs) + 3 \cdot K(U) $ "released energy" = Q \\ 
+		$$ Q = M(U)c^2 - M(Rb)c^2 - M(Cs)c^2 - 3 m(n) c^2 = 0.177536 u c^2 $$
+		= 165.4 MeV \\
+		This means that the rest energy of the Uranium nucleus is greater than the rest energy of all the elements it decays into. This difference in energy is released as kinetic energy.
+	\end{answer}
+	\begin{answer}[Energy released when 1.0 kg unarium undergoes fission at 40 $\%$ efficiency]
+		Determine # of nuclei in 1kg $\cd{^{236}U}$? \\
+		N = $\frac{6.022 \cdot 10^{23} nuclei/mol}{236 g/mol} \cdot 1000g = 2.55 \cdot 10^{24}\ nuclei $ \\\\
+		Total energy produced: \\
+		$E$ = efficiency $\cdot N \cdot Q$ \\
+		$ E = 0.40 \cdot 2.55 \cdot 10^{24}\ nuclei \cdot 165.4 MeV/nuclei$ \\
+		$ E = 7.5 \cdot 10^6 kWh$ \\
+		Enough energy to keep a lightbulb on for tens of thousands of years!
+
+	\end{answer}
+\end{question}
+
+
+\newpage
+\subsection{Conservation Laws}
+
+
+\begin{tabular}{ll}
+	E: & Total relativistic energy \\
+	K: & Relativistic kinetic energy \\
+\end{tabular}
+
+\begin{result}[Momentum Conservation]
+	In an isolated system of particles, the total linear momentum remains constant.
+\end{result}
+
+\begin{result}[Energy Conservation]
+	In an isolated system of particles, the relativistic total energy (kinetic energy plus rest energy) remains constant.
+\end{result}
+
+
+\end{document}
+

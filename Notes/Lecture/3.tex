@@ -1,0 +1,185 @@
+\documentclass[class=article,crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\begin{document}
+\lecture
+\newpage
+\subsection{Doppler Shift}
+\begin{result}[Classical Doppler Shift]
+	v = speed of waves in medium \\
+	$v_0$ = speed of observer w.r.t. medium \\
+	$v_s$ = speed of source w.r.t. medium \\
+	$$ f' = f \cdot \frac{v + v_0}{v-v_s}$$
+\end{result}
+
+\begin{result}[Relativistic Doppler Shift]
+	f = frequency in source rest frame \\
+	f' = frequency measured by some observer moving away from source w/ speed u.
+	$$ f = \frac{N}{\Delta t_0} $$
+	$$ f' = \frac{c}{\lambda '} $$
+	$$ \lambda ' = \frac{u \Delta t' + c}{N} $$
+	$$ f' = \frac{cN}{u \Delta t' + c \Delta t'} $$
+	$$ f' = \frac{cf \Delta t_0}{(u + c) \Delta t'} $$
+	$$ f' = f \sqrt{\frac{1 - u/c}{1 + u/c}} $$ 
+	No dependence on whether the source is moving or the observer is moving.\\
+	Note: If O' is moving toward the source, u is replaced with -u.
+\end{result}
+
+\begin{question}
+	Distant galaxy moving away from earth. Blue hydrogen line expected at wavelength 434 nm measured at 600 nm. What is the speed of the galaxy relative to earth?
+\end{question}
+\begin{answer}
+	$$ f = c/\lambda $$
+	$$ c/\lambda ' = c/\lambda \sqrt{\frac{1 - u/c}{1 + u/c}} $$
+	$$ (\lambda / \lambda ')^2 = \frac{1-u/c}{1+u/c} $$
+	$$ u = c \frac{1 - (\frac{\lambda}{\lambda '})^2}{1 + (\frac{\lambda}{\lambda '})^2} = .31 c $$
+\end{answer}
+
+\subsection{Lorentz transformations}
+Galilean coordinate transformations are not consistent with Einstien's postulates, and don't agree with experiments at high speeds. \\
+New coordinate transformation must fulfill... linearity in space/time, reduce for Galilean version for $v << c$, consistent with Einstien's postulates. \\
+
+$$ x' = \frac{x - ut}{\sqrt{1-u^2/c^2}} $$
+$$ y' = y,\ z' = z, $$ 
+$$ t' = \frac{t- u/c^2 x}{\sqrt{1-u^2/c^2}} $$
+
+Lorentz transformation is just a generalized way to write what happens w/in a coordinate system, and the other rules can follow from these. \\
+
+\subsubsection{Velocity transformation}
+We can derive velocity transformation by differeniating the Lorentz coordinate transformation (space \& time!) \\
+\begin{result}
+	$$ V'_x = \frac{V_x - u}{1-V_x u/c^2} $$
+	$$ V'_y = \frac{V_y \sqrt{1-u^2/c^2}}{1-V_y u/c^2} $$
+	$$ V'_z = \frac{V_z \sqrt{1-u^2/c^2}}{1-V_z u/c^2} $$
+
+Velocity transformation in three dimensions. If we assume movement in the x direction only, you still have this complicated stuff in other dimensions because you're also deriving with respect to time.
+\end{result}
+
+\subsubsection{What would the photon see?}
+Infinitely length contracted \& if it had a clock, that clock would not be moving. BUT it is not an inertial reference frame in which measurements mean anything. Mathematical singularity -- not defined -- can't divide by zero!
+
+\subsubsection{Simultaneity}
+Time acording to O for light to reach two clocks the same distance from a light source:
+$$ t = \frac{L}{2c} \implies\ clock\ 1\ \&\ 2\ are\ syncronized $$
+From point of view of moving observer O'? Use Lorentz transformations!\\
+Clock 1 receives signal at : \\
+$$ t'_1 = \frac{t_1 - (u/c^2)x_1}{\sqrt{1-u^2/c^2}} = \frac{L/2c}{\sqrt{1-u^2/c^2}} $$
+clock 2 receives signal at : \\
+$$ t'_2 = \frac{t_2 - (u/c^2)x_2}{\sqrt{1-u^2/c^2}} = \frac{L/2c - (u/c^2)L}{\sqrt{1-u^2/c^2}} $$
+Difference:
+$$ \Delta t' = t'_1 - t'_2 = \frac{uL/c^2}{\sqrt{1-u^2/c^2}} $$
+
+\subsection{Relatavistic Kinematics}
+\subsubsection{Relativistic Momentum}
+Consider an elastic collision as observed in the rest frame of observer O', where a particle of mass 2m, moving to the left at -.750c, collides with a particle of mass 2m at rest with respect to O'. \\
+\begin{question}[Classical Interpretation]
+	$$p_i' = m_i v_{1i}' + m_2' v_{2i}' $$
+	$$ = 2m \cdot 0 + m(-0.750c) $$
+	$$ = -.75mc $$
+	Final:
+	$$ p_f' = m_1' v_{if}' + m_2' v_{2f}' $$
+	$$ = 2m v_{1f}' + m v_{2f}' $$
+	$$ p_i' = p_f' \rightarrow v_{1f}' = -0.5c, v_{2f}' = 0.25c $$
+	Momentum is conserved. \\
+	\bigskip
+	Now assume that refernce frame of O' is moving with velocity 0.550c in the positive x direction relative to observer O. What does O think about momentum conservation? \\
+	$$ v_{1i} = 0 + 0.55c = 0.55c,\ v_{2i} = \frac{v_{2i}' + u}{1 + v_{2i}' u/c^2} = -0.340 c $$
+	Using the same steps as above: \\
+	$$ v_{1f} = 0.069c,\ v_{2f} = 0.703c $$
+	Momentum: \\
+	$$ p_i = m_1 v_{1i} + m_2 v_{2i} = 2m(0.550c) + m(-0.340c) = 0.76mc $$
+	$$ p_f = m_1 v_{1f} + m_2 v_{2f} = 2m(0.069c) + m(0.703c) = 0.841mc $$
+
+	\textbf{\emph{Momentum is not conserved?}}
+\end{question}
+Need a new definition of momentum that: \\
+\begin{enumerate}
+	\item Reduces to classical version p = mv at low speeds ($v << c$)
+	\item Conserves momentum such that principle of relativity holds, if momentum is conserved at one reference frame it must be conserved at all reference frames.
+\end{enumerate}
+\newpage
+\begin{result}[Relatavistic Interpretation]
+	m: mass of particle \\
+	v: velocity of particle as measured in a particular reference frame\\
+	$$ p = \frac{mv}{\sqrt{1 - v^2/c^2}} (= \gamma mv) $$
+
+	From above, for a stationary observer:\\
+	$$ p_i' = \frac{m_1 v_{1i}'}{\sqrt{1-v_{1i}'^2/c^2}} + \frac{m_2 v_{2i}'}{\sqrt{1-v_{2i}'^2/c^2}} = -1.134 mc $$
+	Note, the total initial momentum is different than in above classical interpretation. \\
+	Now, after finding final velocity $v_{1f}' = 0.585c, v_{2f}' = 0.294c$ \\
+	$$ p_f' = \frac{m_1 v_{1f}'}{\sqrt{1-v_{1f}'^2/c^2}} + \frac{m_2 v_{2f}'}{\sqrt{1-v_{2f}'^2/c^2}} = -1.134 mc $$
+
+	Using the same steps as above to find the initial and final velocities in reference frame O: \\
+	$$v_{1i} = 0.55c,\ v_{2i} = -0.340c$$
+	$$ v_{1f} = 0.069c,\ v_{2f} = 0.703c $$
+	Initial momentum $p_i = 0.956 mc$
+	Final momentum $p_f = 0.956 mc$
+
+	\textbf{\emph{Momentum is conserved in all reference frames}}
+\end{result}
+
+\begin{question}[Comparison of Classical and Relatavistic Momentum]
+	Consider the momentum of an electron (m=9.11 x $10^{-31}kg$) moving with speed v = 0.75c. How does the relatavistic momentum compare with the classical result?
+	\begin{answer}[Answer]
+		$$ p = mv = 2.05 \cdot 10^{-22} kg m/s $$
+		$$ p = \gamma mv = 3.1 \cdot 10^{-22}kg m/s $$
+		Relativistic energy is about 50\% larger!
+	\end{answer}
+\end{question}
+
+\subsubsection{Relativistic Kinetic Energy}
+Similar as momentum, the classical definition of kinetic energy would lead to an apparetnt lack of energy conservation. 
+$$ KE = \frac{1}{2}mv^2 $$
+We need a relativistic definition for kinetic energy.\\
+
+Consider the work-energy theorem (change in kinetic energy is equal to the integral of the force):
+$$ W = \int F\ dx  = int (\frac{dp}{dt})\ dx = \int \frac{dx}{dt}\ dp = \int v\ dp $$
+Using integration by parts:
+$$ W = pv - \int p\ dv $$
+Therefore,
+$$ KE = \gamma mv \cdot v - \int_0^v \gamma mv\ dv $$
+$$ = \gamma mv^2 + mc^2 \gamma - mc^2 $$
+$$ KE = \frac{mc^2}{\sqrt{1-v^2/c^2}} - mc^2 $$
+
+\subsubsection{Rest Energy}
+We can write relativistic kinetic energy in terms of relativistic total energy and rest energy, $E$ and $E_0$.
+$$ K = E - E_0,\  E = \gamma mc^2,\ E_0 = mc^2 $$
+m: rest mass, mass as measured in rest frame of particle.
+
+\begin{question}[Rest Energy]
+	What is the rest energy of an electron (M = $9.11 \times 10^{-31} kg$)? What is the momentum of an electron moving with speed v = 0.75c?
+	\begin{answer}[Answer]
+		$$E_0 = mc^2 = (9.11 \times 10^{-31} kg) (3.00 \times 10^8 m/s)^2 $$
+		$$ = 9.19 \cdot 10^{-14} kg m^2/s^2$$
+		Unit: eV: 1 eV = 1.609 $\cdot 10^{-19}$
+		$$E_0 = 5.11 \cdot 10^5 eV = 0.511 MeV$$
+		Electron mass: $m_e = 0.511 MeV/c^2$
+		\bigskip
+		$$ p = \gamma mv = \frac{0.511 MeV/c^2 0.75 c}{1 - 0.75^2} = 0.58 MeV/c^2 c = 0.58 MeV/c $$
+	\end{answer}
+\end{question}
+
+\begin{result}[Units:]
+	These units are very convenient when working with particles at relativistic speeds. \\\\
+		\begin{tabular}{l|l}
+			Energy: & $MeV$ \\
+			Momentum: & $MeV/c$ \\
+			Mass: & $MeV/c^2$
+		\end{tabular}
+\end{result}
+
+\newpage
+\subsubsection{Energy-Momentum Relationship}
+It is often useful to write the relativistic total energy of a particle in terms of its momentum:\\
+\begin{align*}
+	p &= mv \gamma \\
+	E &= mc^2 \gamma \\
+	E^2 &= \frac{(mc^2)^2)}{1-v^2/c^2}  \\
+	(pc)^2 &= \frac{m^2v^2c^2}{1-v^2/c^2} \\
+	E^2 &= \frac{(mc^2)^2 + m^2v^2c^2 - m^2v^2c^2}{1-v^2/c^2} \\
+	&= \frac{(mc^2)^2(1-v^2/c^2)}{(1-v^2/c^2)} + (pc)^2
+\end{align*}
+\begin{result}[Energy-Momentum Relationship]
+	$$ E^2 = (pc)^2 + (mc^2)^2 $$
+\end{result}
+\end{document}
+

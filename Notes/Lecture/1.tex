@@ -1,0 +1,100 @@
+\documentclass[class=article,crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\begin{document}
+\lecture
+\subsection{Syllabus}
+\subsubsection{Why Modern Physics?}
+Already learned about mechanics, electromagnetism, and thermodynamics, which forms the basis of "classical physics", however, classical physics fails to explain many observed phenomena, for example, black-body radiation, stability of atoms/radioactivity. \\\\
+\textbf{Modern Physics} refers to developments that begun ~1900, leading to relativity and quantum theories and their applications. Is not irrelevant - many very important applications i.e. GPS, semiconductors, medical imaging, lasers. \\
+
+\subsubsection{Course Logistics}
+\begin{description}
+	\item [$\bullet$] Office hours Mon/Wed @ 1 - 2:30 pm
+	\item [$\bullet$] Krane's Modern Physics 3rd or 4th edition, electronic versions are fine
+	\item [$\bullet$] Weekly reading assignments posted on Canvas
+	\item [$\bullet$] Homework posted on Canvas typically on Wednesdays, due the following Thursday at start of class (over canvas)
+	\item [$\bullet$] Late assignments are not accepted, but lowest HW score will be dropped
+	\item [$\bullet$] Professor is teaching from CERN. You can go to the classroom but the teacher won't be there.
+\end{description}
+
+There are no stupid questions, please ask questions. Being able to ask questions is an important skill. \\
+Questions outside of class can be answered during office hours or on Canvas discussion boards. \\
+Physics workshop is good for homework help, and there is also tutoring.\\
+
+There will be at least one TA, assigned at some point. \\
+
+\subsection{Introduction to Special Relativity}
+Relativity  - How are events observed in different reference frames? \\
+Nothing new -- Galileo \& Newton knew the Relativity Principle applied to mechanics, that the laws of mechanics are the same in all inertial reference frames. \\
+Inertial reference frame? \\
+Reference frame in which newton's 1st law is valid, i.e. a non-accelerating frame.\\
+Newton's laws are the same as seen in different inertial reference frames (invariant) \\
+
+\subsubsection{Galilean Transformations}
+Consider two different reference frames S and S', where S' is moving with constant uniform velocity $u$. \\
+Assume that time is the same for all observers (t = t') \\
+
+If there is an Object P at coordinates x', y', z', the Observer O would observe object at x = x' + ut, y = y', z = z'. \\
+\newpage
+\begin{result}[Galilean Transformations]
+	Coordinate Transformation:
+	\[x' = x - ut, y' = y, z' = z\]
+
+	Velocity Transformation: 
+	$$ \frac{d}{dt}(x') = \frac{dx}{dt} - u \rightarrow V'_x = V_x - u $$
+	$$ V'_y = V_y $$
+	$$ V'_z = V_z $$
+
+	Acceleration Transformation:
+	$$ \frac{d}{dt}(V'_x) = \frac{dV_x}{dt} \implies a'_x = a_x $$
+	$$ a'_y = a_y $$
+	$$ a'_z = a_z $$
+\end{result}
+
+Newton's second law holds for all observers (it obeys the relativity principle), and that no inertial reference frame is special. \\
+
+\subsubsection{The need for the ether}
+What about Maxwell's equations of electromagnetism? \\
+Electromagnetic waves (light) propogate with a velocity $ c = 3 \times 10^8 m/s $. \\
+
+Instead of thinking of P as a point, think of it as a light source. Would $V_x = V'x + u$ imply $ V_x = c + u $ ?? \\
+
+Maxwell's equations are not invariant under Galilean transformation (evident from how Maxwell's equations predicted speed of light!) \\
+Speed of something depends on which interial frame you are observing it from - are Maxwell's equations only correct in a certain frame? \\
+
+\subsubsection{Michelson-Moerley experiment}
+Physicists in 19th century postulated that light traveled trough a medium (ether). \\
+Speed of light predicted by Maxwell's equations was interpreted as that relative to the ether, i.e. ether preposed as an absolute reference system from which c was constant. \\
+This would mean that the laws of physics is not different, because you're simply moving relative to the ether! \\
+
+Michelson and Morley used an interferometer mounted on a 1.5m stone slab floating in mercury, to reduce the effect of vibrations and isolate the setup. \\
+
+\subsubsection{Michelson interferometer}
+Monochromatic beam of light split in two, travel different paths, then recombined \\
+Phase difference between combined beams cause fringes to appear \\
+
+\textbf{Two contributions} \\
+\begin{enumerate}
+	\item Phase difference AB-AC, one beam might travel longer distance \\
+	\item Time difference when moving parallel to ether direction vs perpendicular to it - - rotating by 90 degrees should isolate this! \\
+\end{enumerate}
+
+Expectation: Fringe shift as interferometer was rotated with respect to the ether velocity. Michelson-Moerley could resolv 0.005 periods and expected 0.4 periods of shift. 
+
+\textbf{This was not observed} \\
+
+OK, so maybe it was the rotation of the earth around the sun that canceled this out. So they repeated half a year later, and still a null result. Speed of light is always c.
+
+\subsubsection{Modern-day interferometers}
+LIGO: Laser Interferometer Gravitational-Wave Observatory \\
+September 14, 2015: FIrst direct detection of gravitational waves and the first observation of a binary black hole merger. \\
+Measuring $\frac{\Delta L}{L}$ on the order of $10^{-21}$, based on the difference betwen the two sites. \\
+This is a direct development of the interferometer Michelson and Morley used.
+
+\begin{result}[Einstien's Postulates]
+	$ \bullet $ \textbf{The principle of relativity:} The laws of physics are the same in all intertial reference frames. There is no way to detect absolute motion, and no preferred inertial system exists. \\
+	$ \bullet $ \textbf{The constancy of the speed of light:} The speed of light in free space has the same value c in all inertial reference frames. \\
+	$ V'_x = V_x + u $ is \emph{\textbf{not}} true.
+\end{result}
+
+\end{document}

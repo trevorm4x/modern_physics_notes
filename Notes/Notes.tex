@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage{standalone}
+\usepackage{import}
+\usepackage[margin=1in,headheight=57pt,headsep=0.1in]{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{fancyhdr}
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength\parindent{0pt}
+\setlength\headheight{30pt}
+\headsep=0.25in
+\lhead{\textbf{Lecture \arabic{section}}}
+\rhead{\textbf{\course}}
+
+
+
+% ----------------- %
+% BOXED EXPRESSIONS %
+% ----------------- %
+\newenvironment{result}[1][]{
+\ifstrempty{#1}
+    {} % Don't add header
+    {\mdfsetup{
+        frametitle={
+            \tikz[baseline=(current bounding box.east),outer sep=0pt]
+            \node[anchor=east,rectangle,fill=blue!30]
+            {#1};}}
+    } % Header
+    \mdfsetup{
+        innertopmargin=10pt,linecolor=blue!30,
+        linewidth=2pt,topline=true,
+        frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+    }
+    \begin{mdframed}
+}{
+    \end{mdframed}
+}
+
+\newenvironment{question}[1][]{
+\ifstrempty{#1}
+    {}
+    {\mdfsetup{
+        frametitle={
+            \tikz[baseline=(current bounding box.east),outer sep=0pt]
+            \node[anchor=east,rectangle,fill=red!30]
+            {#1};}}
+    }
+    \mdfsetup{
+        innertopmargin=10pt,linecolor=red!30,
+        linewidth=2pt,topline=true,
+        frametitleaboveskip=\dimexpr - \ht\strutbox\relax
+    }
+    \begin{mdframed}
+}{
+    \end{mdframed}
+}
+
+\newenvironment{answer}[1][]{
+\ifstrempty{#1}
+    {}
+    {\mdfsetup{
+        frametitle={
+            \tikz[baseline=(current bounding box.east),outer sep=0pt]
+            \node[anchor=east,rectangle,fill=green!30]
+            {#1};}}
+    }
+    \mdfsetup{
+        innertopmargin=10pt,linecolor=green!30,
+        linewidth=2pt,topline=true,
+        frametitleaboveskip=\dimexpr - \ht\strutbox\relax
+    }
+    \begin{mdframed}
+}{
+    \end{mdframed}
+}
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{lecturenumber}\setcounter{lecturenumber}{1}
+\newcommand{\lecture}[1][-1]{
+    \ifnum#1>0
+        \setcounter{lecturenumber}{#1}
+    \fi
+    \section{Lecture \#\arabic{lecturenumber}}
+    \setcounter{section}{\value{lecturenumber}}
+    \stepcounter{lecturenumber}
+}
+
+
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+\newcommand\course{PHYS 2303}
+\newcommand\coursetitle{Modern Physics}
+\newcommand\prof{Skinnari}
+\newcommand\semester{Spring 2021}
+\newcommand\name{Trevor Smith}
+
+
+
+% -------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+\begin{titlepage}
+    \centering
+    \includegraphics[width=\textwidth]{./Images/Header.jpeg}\\
+    \vspace*{\fill}
+    \textsc{\LARGE{\coursetitle}}\\[0.3cm]
+    \textsc{\Large{Professor \prof}}\\[0.3cm]
+    \textsc{\large{\course}}\\[0.3cm]
+    \textsc{\large{\semester}}\\
+    \vspace*{\fill}
+    \textsc{\name}
+\end{titlepage}
+\thispagestyle{empty} 
+\tableofcontents
+\pagebreak
+\setcounter{page}{1}
+\pagestyle{fancy}
+
+\import{Lecture/}{1}
+\import{Lecture/}{2}
+\import{Lecture/}{3}
+\import{Lecture/}{4}
+\import{Lecture/}{5}
+\import{Lecture/}{6}
+\import{Lecture/}{7}
+\end{document}

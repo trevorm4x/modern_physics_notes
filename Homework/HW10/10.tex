@@ -1,0 +1,278 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{problemnumber}\setcounter{problemnumber}{1}
+\titlespacing\section{0pt}{10pt}{0pt}   % Spacing between Problems
+\titlespacing\subsection{0pt}{5pt}{0pt} % Spacing between Parts
+\newcommand{\problem}[1][-1]{
+    \setcounter{partnumber}{1}
+    \ifnum#1>0
+        \setcounter{problemnumber}{#1}
+    \fi
+    \section*{Problem \arabic{problemnumber}}
+    \stepcounter{problemnumber}
+}
+
+\newcounter{partnumber}\setcounter{partnumber}{1}
+\newcommand{\ppart}[1][-1]{
+    \ifnum#1>0
+        \setcounter{partnumber}{#1}
+    \fi
+    \subsection*{Part \parttype{partnumber}}
+    \stepcounter{partnumber}
+}
+
+\newenvironment{question}{
+    \color{gray}\itshape
+    \vspace{5pt}
+    \begin{tabular}{|p{0.97\linewidth}}
+}{
+    \end{tabular}\\[5pt]
+}
+
+
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength\parindent{0pt}
+\setlength\headheight{30pt}
+\headsep=0.25in
+\pagestyle{fancy}
+\lhead{\ifthenelse{\thepage=1}
+    {\textbf{Trevor Smith} \\ \textbf{\writeday}}
+}
+\chead{\ifthenelse{\thepage=1}
+    {\textbf{\huge{HOMEWORK \hwnumber}}}
+    {\textbf{\large{HOMEWORK \hwnumber}}}
+}
+\rhead{\ifthenelse{\thepage=1}
+    {\textbf{{\course}} \\ \textbf{Professor {\prof}}}
+}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+% \PARTTYPE:
+% \Alph   := "Part A, Part B,  ..."
+% \alph   := "Part a, Part b,  ..."
+% \arabic := "Part 1, Part 2,  ..."
+% \Roman  := "Part I, Part II, ..."
+\newcommand\parttype{\Roman}
+
+% \COURSE:
+\newcommand\course{PHYS 2303}
+
+% \HWNUMBER
+\newcommand\hwnumber{10}
+
+% \SEMESTER
+\newcommand\semester{Spring 2021}
+
+% \PROF
+\newcommand\prof{Skinnari}
+
+% \WRITEDAY
+% \today is date of compilation, replace if writing due date rather than write date
+\newcommand\writeday{\today}
+
+
+
+%  ------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+
+\problem
+\begin{question}
+	Use the uncertainty principle to estimate the range of the W boson that is responsible for the weak interaction of a proton and a neutron.
+\end{question}
+$$ \Delta E \Delta t \propto \bar{h} $$
+$\Delta E = mc^2$\\
+$\Delta t = \Delta x/c$
+
+$$ \Delta x \approx \frac{\bar{h}c}{mc^2} = \frac{6.5821 \cdot 10^{-16}\ eV\cdot s \cdot c}{80.4\ GeV} = 2.454 \cdot 10^{-18}\ meters$$
+
+\problem
+\begin{question}
+	Give a possible decay mode (that obeys conservation laws) for the following particles.
+\end{question}
+
+A)\\
+$$ \pi^- \rightarrow e^- + \bar{\nu}_e $$
+
+B)\\
+$$ \bar{n} \rightarrow \bar{p} + e^+ + \nu_e $$
+
+C)\\
+$$ \bar{\Lambda}_0 \rightarrow \bar{p} + \pi^+ $$
+
+D)\\
+$$ \mu^+ \rightarrow e^+ + \nu_e + \bar{\nu}_\mu $$
+
+
+\problem
+\begin{question}
+	Each of the following decays violate a conservation law. Explain which conservation law is violated for each of them.
+\end{question}
+
+A) Violates lepton number\\
+
+B) The rest energies of the products is greater than the original particle\\
+
+C) Violates baryon number and strangeness\\
+
+D) Violates lepton number, the neutrino should be anti\\
+
+E) Violates strangeness and baryon number\\
+
+\newpage
+\problem
+\begin{question}
+	Find the kinetic energies of each of the two final particles in the following decays. Assume that the decaying particle is at rest.
+\end{question}
+
+A)\\
+$$ K^0 \rightarrow \pi^+ + \pi^- $$
+$$Q = (m_i - m_f)c^2 = (498 - 140 - 140)c^2 = 218\ MeV $$
+$$ K_{\pi^+} + K_{\pi^-} = 218\ MeV $$
+$$ \left(\sqrt{c^2p_{\pi^+}^2 + m^2_{\pi^+}c^4} - m_{\pi^+}c^2 \right) +
+	\left(\sqrt{c^2p_{\pi^-}^2 + m^2_{\pi^-}c^4} - m_{\pi^-}c^2 \right) = 218\ MeV $$
+Conservation of momentum gives $p_{\pi^+} = p_{\pi^-}$. Also,
+because these particles are anti-particles of each other,
+we can substitute $m_{\pi^+} = m_{\pi^-}$, thus these two
+expressions will be identical, with the kinetic energy
+being split evenly between the two. 
+$$ K_{\pi^+} = K_{\pi^-} = 109\ MeV $$
+
+B)\\
+$$ \Sigma^- \rightarrow n + \pi^- $$
+$$Q = (m_i - m_f)c^2 = (1197 - 940 - 140)c^2 = 117\ MeV $$
+$$ K_{n} + K_{\pi^-} = 117\ MeV $$
+$$ \left(\sqrt{c^2p_{n}^2 + m^2_{n}c^4} - m_{n}c^2 \right) +
+	\left(\sqrt{c^2p_{\pi^-}^2 + m^2_{\pi^-}c^4} - m_{\pi^-}c^2 \right) = 218\ MeV $$
+Conservation of momentum gives $p_{n} = p_{\pi^-}$. 
+
+$$ \sqrt{c^2p^2 + 940^2} + \sqrt{c^2p^2 + 140^2} = 1197\ MeV $$
+We will just think of pc as being in MeV and remove the c's.
+$$ (p^2 + 940^2) + 2\sqrt{(p^2 + 940^2)(p^2 + 140^2)} + (p^2 + 140^2) = 1197^2 $$
+$$ 2\sqrt{(p^2 + 940^2)(p^2 + 140^2)} = -2p^2 + 1197^2 - 940^2 - 140^2 $$
+$$ 4(p^2 + 940^2)(p^2 + 140^2) = (-2p^2 + 529609)^2 $$
+$$ 4p^4 + (940^2 + 140^2)p^2 + (940 + 140)^2 = 4p^4 + 2 \cdot 529609p^2 + 529609^2 $$
+$$ (940^2 + 140^2 - 2 \cdot 529609)p^2  = -(940 + 140)^2 + 529609^2 $$
+$$ 5,731,236 p^2  = 211,211,452,881 $$
+p = 191.97 MeV/c. Plugging in to each separate expression for K,
+$$ K_{n} = \sqrt{c^2p_{n}^2 + m^2_{n}c^4} - m_{n}c^2 $$
+$$ K_{n} = \sqrt{191.97^2 + 940^2}\ MeV - 940 MeV $$
+$$ K_{n} = 19.4\ MeV $$
+
+$$ K_{\pi} = \sqrt{c^2p_{\pi}^2 + m^2_{\pi}c^4} - m_{\pi}c^2 $$
+$$ K_{\pi} = \sqrt{191.97^2 + 140^2} - 140 $$
+$$ K_{\pi} = 97.6\ MeV $$
+
+\newpage
+\problem
+\begin{question}
+	Find the threshold kinetic energy for the following reactions. In each case the first particle is in motion and the second is at rest.
+\end{question}
+
+A) $$ p + n \rightarrow p + \Sigma^- + K^+ $$
+$$ K_{th} = -(m_i - m_f)c^2\frac{2m_p + m_n + m_{\Sigma^-} + m_{K^+}}{2m_n} $$
+$$ K_{th} = -(940+938-(938+1197+494))c^2\frac{2\cdot 938 + 940 + 1197 + 494}{2*940} $$
+$$ K_{th} = 1800\ MeV $$
+
+B) $$ \pi^+  + p \rightarrow p + p + \bar{n} $$
+$$ K_{th} = -(m_i - m_f)c^2\frac{3m_p + m_{\bar{n}} + m_{\pi^+}}{2m_p} $$
+$$ K_{th} = -(140 + 938 - (2*938 + 940))c^2\frac{3*938 + 940 + 140}{2*938} $$
+$$ K_{th} = 3608\ MeV $$
+
+\newpage
+\problem
+\begin{question}
+	Consider the $\Lambda \rightarrow p + \pi^-$ decay, where the decaying particle has a kinetic energy of 0.2 GeV and $\pi^-$ moves at an angle of 90 degrees relative to the direction of travel of the decaying particle.\\
+	a) Find the kinetic energies of the proton and pi meson.\\
+	b) Find the direction of travel of the proton
+\end{question}
+
+A) \\
+$$  E_\Lambda = K_\Lambda +m_\Lambda c^2 = 200 MeV + 1116 MeV = 1316 MeV $$
+$$ cp_\Lambda = \sqrt{e^2_\Lambda - (m_\Lambda c^2)^2} = \sqrt{(1316)^2 - (1116)^2} = 697 MeV $$
+We can consider the original particle's motion as along the x-axis.
+The proton moves with an angle $\theta$ to this axis.
+The pi meson moves along the y-axis.
+Considering conservation of momentum,
+where the y-component of the Lambda baryon is zero,
+and the x-component of the pi meson is zero,
+$$ p_\Lambda = p_p cos\theta $$
+$$ p_\pi = p_p sin\theta $$
+
+This forms a sort of right triangle, where the length of the proton vector must be equal to the length of the proton and Lambda baryon, $p_\Lambda^2 + p_\pi^2 =p_p^2$. \\
+
+Conservation of total energy gives:
+$$ E_\Lambda = E_p + E_\pi = \sqrt{(cp_p)^2 + (m_pc^2)^2} + \sqrt{(cp_\pi)^2 + (m_\pi c^2)^2} $$
+
+Side-trip:
+$$ c^2 = (a + b)^2 $$
+$$ c^2 = a^2 + 2ab + b^2 $$
+$$ c^2 = 2a^2 + 2ab + b^2 - a^2 $$
+$$ c^2 = 2a(a + b) + b^2 - a^2 $$
+$$ c^2 = 2ac + b^2 - a^2 $$
+$$ 2ac = c^2 - b^2 + a^2 $$
+$$ a = \frac{c^2 - b^2 + a^2}{2c} $$
+
+Swapping out the variables:
+
+$$ E_p = 
+\frac{E_\Lambda^2 - (cp_\pi)^2 - (m_\pi c^2)^2 
++ (cp_p)^2 + (m_pc^2)^2}{2E_\Lambda} $$
+
+We can replace the momentum terms with $p_\Lambda^2 = p_p^2- p_\pi^2 $. \\
+$$ E_p = 
+\frac{E_\Lambda^2 + p_\Lambda^2 
+- (m_\pi c^2)^2 + (m_pc^2)^2}{2E_\Lambda} $$
+
+We now can plug things in and get an answer.
+
+$$ E_p = 
+\frac{(1316)^2 + (697)^2
+- (140)^2 + (938)^2}{2\cdot 1316} = 1169.4\ MeV $$
+
+Knowing the total energy of the proton,
+$$ E_\pi = E_\Lambda - E_p = 1316 - 1169.4 = 146.6\ MeV $$
+$$ K_p = E_p - m_pc^2 = 1169.4 - 938 = 231.4\ MeV $$
+$$ K_\pi = E_\pi - m_\pi c^2 = 146.6 - 140 = 6.6\ MeV $$
+
+B)\\
+$$ cp_p = \sqrt{E_p^2 - (m_p c^2)^2} = \sqrt{1169.4^2 - (938)^2} = 698.3\ MeV/c $$
+$$ cp_\pi = \sqrt{E_\pi^2 - (m_\pi c^2)^2} = \sqrt{146.6^2 - (140)^2} = 43.5\ MeV/c $$
+$$ \theta = sin^{-1} \frac{p_\pi}{p_p} = sin^{-1} \frac{43.5}{698.3} = 3.57\ degrees\ from\ the\ original\ path $$
+
+\newpage
+\problem
+\begin{question}
+	A positron moving at .95c collides with another positron that is at rest. After the collision, the first positron comes to rest.
+	a) Use conservation of energy to find the speed of the second positron after the collision\\
+	b) Do the same using conservation of linear momentum.
+\end{question}
+A)\\
+Look, if the energy is going nowhere except into the second positron, and all of it is transferred, then the second positron is also going to move with the same energy, and since they are both going to be the same mass, it's gonna be the same speed.\\
+
+B)\\
+Look, after all this I don't have energy for games, it's the same with linear momentum -$>$ all momentum is transferred into the second positron, it is the same mass, it goes the same speed.
+
+
+\end{document}

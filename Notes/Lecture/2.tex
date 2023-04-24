@@ -1,0 +1,61 @@
+\documentclass[class=article,crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\begin{document}
+\newpage
+\lecture
+\subsection{Relativity of Time}
+\begin{question}[Consequence of Posulates]
+	What is the time interval measured by a person on a vehicle? \\
+	Person in vehicle sees $\Delta t = \frac{2d}{c} $ \\
+	Person outside vehicle sees the light travel along a triangle. \\
+	total x distance : $v \Delta t$ \\
+	total light distance : $c \frac{\Delta t}{2}$ \\
+	Pythagorean theorem gives : $d^2 + (\frac{v \Delta t}{2})^2 = (\frac{c \Delta t}{2})^2 $ \\
+	$$ \Delta t = \frac{2d}{\sqrt{c^2 + v^2}} $$
+	$$ \Delta t = \frac{\Delta t_0}{\sqrt{1 - \frac{v^2}{c^2}}} $$
+	\begin{result}[Gamma Factor]
+		$$ \gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} $$ \\
+		$$ \gamma > 1\ for\ v < c $$
+	\end{result}
+$$ \Delta t = \gamma \Delta t_0 $$
+	... Time dilation!
+\end{question}
+
+\subsubsection{Cosmic Muons}
+Lifetime of muons is ~2.2 $\mu$ s \\
+Produced in the atmosphere (atmosphere ~100km high) \\
+Average max distance:
+$$ L = 2.2 \cdot 10^{-6}\ s \cdot 3 \cdot 10^8\ m/s = 660\ m $$
+Time dilation is a real effect, even if not noticeable at normal speeds! \\
+
+$\mu$ lifetime according to observer on Earth: \\
+$$ \tau = \gamma \tao_0 $$
+$$ \tau_0 = 2.2 \mu s $$
+$$ if\ v = 0.99999c,\ \gamma \approx 224 $$
+$\tau \approx 490 \mu s!$
+Length travelled:
+$$ L = \tau \cdot c = 490 \cdot 10^{-6} \cdot 3 \cdot 10^8 = 147,000\ m $$
+\begin{question}[Two stars]
+	We have an observer on earth, and two stars in space. There is a spaceship travelling from star 1 to star 2 at velocity v. \\
+	\begin{answer}[The observer at rest on Earth w.r.t the two stars, measures:]
+		Distance between stars : $L_0$ \\
+		Time for spaceship to travel : $\Delta t = \frac{L_0}{v}$\\
+	\end{answer}
+	\begin{answer}[Observer on spaceship traveling with speed v from star to star, measures:]
+		Smaller time of tavel : $$\Delta t_0 = \frac{\Delta t}{\gamma}$$ \\
+		Distance measure : $$L = v \Delta t_0 = \frac{v \Delta t}{\gamma} $$ \\
+		$$ L = \frac{v \Delta t}{\gamma} = \frac{L_0}{\gamma} $$
+		.. Length contraction!
+	\end{answer}
+\end{question}
+Length contraction takes place in direction of motion. Objects do not "shrink" - there is just a difference in measured length by different observers.
+\subsection{Relativistic Velocty Addition}
+$$\frac{v + u}{1 + \frac{vu}{c^2}}$$
+
+\subsection{Relatavistic Doppler Shift}
+Classical Doppler effect for sound waves, $f' = f * \frac{v + v_0}{v - v_s}$\\
+
+For light, with no medium, and no preferred reference frame...
+
+\end{document}
+

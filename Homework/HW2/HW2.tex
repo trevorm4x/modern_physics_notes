@@ -1,0 +1,263 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{problemnumber}\setcounter{problemnumber}{1}
+\titlespacing\section{0pt}{10pt}{0pt}   % Spacing between Problems
+\titlespacing\subsection{0pt}{5pt}{0pt} % Spacing between Parts
+\newcommand{\problem}[1][-1]{
+    \setcounter{partnumber}{1}
+    \ifnum#1>0
+        \setcounter{problemnumber}{#1}
+    \fi
+    \section*{Problem \arabic{problemnumber}}
+    \stepcounter{problemnumber}
+}
+
+\newcounter{partnumber}\setcounter{partnumber}{1}
+\newcommand{\ppart}[1][-1]{
+    \ifnum#1>0
+        \setcounter{partnumber}{#1}
+    \fi
+    \subsection*{Part \parttype{partnumber}}
+    \stepcounter{partnumber}
+}
+
+\newenvironment{question}{
+    \color{gray}\itshape
+    \vspace{5pt}
+    \begin{tabular}{|p{0.97\linewidth}}
+}{
+    \end{tabular}\\[5pt]
+}
+
+
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength\parindent{0pt}
+\setlength\headheight{30pt}
+\headsep=0.25in
+\pagestyle{fancy}
+\lhead{\ifthenelse{\thepage=1}
+    {\textbf{Trevor Smith} \\ \textbf{\writeday}}
+}
+\chead{\ifthenelse{\thepage=1}
+    {\textbf{\huge{HOMEWORK \hwnumber}}}
+    {\textbf{\large{HOMEWORK \hwnumber}}}
+}
+\rhead{\ifthenelse{\thepage=1}
+    {\textbf{{\course}} \\ \textbf{Professor {\prof}}}
+}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+% \PARTTYPE:
+% \Alph   := "Part A, Part B,  ..."
+% \alph   := "Part a, Part b,  ..."
+% \arabic := "Part 1, Part 2,  ..."
+% \Roman  := "Part I, Part II, ..."
+\newcommand\parttype{\Roman}
+
+% \COURSE:
+\newcommand\course{PHYS 2303}
+
+% \HWNUMBER
+\newcommand\hwnumber{1}
+
+% \SEMESTER
+\newcommand\semester{Spring 2021}
+
+% \PROF
+\newcommand\prof{Skinnari}
+
+% \WRITEDAY
+% \today is date of compilation, replace if writing due date rather than write date
+\newcommand\writeday{\today}
+
+
+
+%  ------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+\problem
+\begin{question}
+	A neutral K meson at rest decays into two pions ($\pi$ mesons), which travel in opposite directions along the x axis with speeds of 0.815c. If instead the K meson were moving in the positive x direction with a velocity of 0.435c, what would be the velocities of the two pions? 
+\end{question}
+We can use relatavistic velocity addition to solve the problem. Where m1 is the meson that moved in the negative x direction relative to the K meson, and m2 moved in the positive x direction, \\
+$$ v_K = 0.435c $$
+$$ v_{0m1} = -0.815c $$
+$$ v_{0m2} = 0.815c $$
+
+$$ m_1 = \frac{v + u}{1+\frac{vu}{c^2}} = \frac{v_K + v_{0m1}}{1 + v_K v_{0m1}/c^2} = \frac{0.435c -0.815c}{1 + (0.435*-0.815)} = \frac{-0.38c}{0.6455} = -0.5887c $$
+
+$$ m_2 = \frac{v + u}{1+\frac{vu}{c^2}} = \frac{v_K + v_{0m2}}{1 + v_K v_{0m2}/c^2} = \frac{0.435c +0.815c}{1 + (0.435*0.815)} = \frac{1.25}{1.355} = 0.9228c $$
+
+\problem
+\begin{question}
+	The radius of a gold nucleus is about 7.0 fm. What is its density when travelling at .99995c?
+\end{question}
+A gold atom travelling at that speed with experience length contraction. 
+$$ L = \frac{L_0}{\gamma} $$
+Where $L_0$ is the original length of the nucleus (L = d = 2r = 14.0 fm).
+$$ L = L_0 \cdot \sqrt{1 - v^2/c^2} $$
+$L_0 = 14.0 fm, v = 0.99995c$
+$$ L = 14.0 fm \cdot \sqrt{1 - .99995^2} = 0.14 fm $$
+This describes the contraction along one axis. The other axis of the sphere are unaffected. We can express the volume of the contracted shape as: \\
+$(4/3)\pi(a*b*c)$ where a, b, and c are the radii of each axis.
+Where the mass of an atom of gold is 196 u = 196 x 1.66 x $10^{-24}$ grams/u = $3.2713 \times 10^{-22} g$.
+$$ \rho = m/V = \frac{3.2713 \cdot 10^{-22} g}{4/3 \cdot \pi \cdot .14 fm \cdot 14 fm \cdot 14 fm} = 2.864 \cdot 10^{-24} g/fm^3 $$
+$$ 10^{-24} g/fm^3 \cdot \frac{(10^{15} fm)^3}{1m^3} = 2.846 \cdot 10^{21} g/m^2$$
+Its normal density would be 100x lower, as the .14 in the denominator would be replaced by a third 14.
+
+\newpage
+\problem
+\begin{question}
+	a.) Amanda travels 32 light-years and experiences 20 years during her flight. What was her speed?\\
+	b.) How old is her twin brother on earth when she retuns?
+\end{question}
+a.)\\
+Amanda experiences 20 years while traveling a distance of 32 light-years from a resting perspective. From her perspective, however, she travels $L = L_0/\gamma$. This distance L will be $L = v' \cdot \Delta t'$.
+
+$$ v \Delta t' = \frac{L_0}{\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}} = 
+{L_0}{\sqrt{1-\frac{v^2}{c^2}}} \rightarrow $$
+$$ v^2 \Delta t'^2 = L_0^2-L_0^2\frac{v^2}{c^2} \rightarrow $$
+$$ v^2\Delta t'^2 + L_0^2\frac{v^2}{c^2} = L_0^2 \rightarrow $$
+$$ v^2(\Delta t'^2 + \frac{L_0^2}{c^2}) = L_0^2 \rightarrow $$
+$$ v^2 = \frac{L_0^2}{\Delta t'^2 + \frac{L_0^2}{c^2}} \rightarrow $$
+$$ v^2 = \frac{1}{\frac{\Delta t'^2}{L_0^2} + \frac{1}{c^2}} \rightarrow $$
+Plugging in numbers,
+$$ v' = 0.8799c$$
+b.)\\
+From the Bernie's perspective, Amanda travels 32 lightyears at 0.8799c. This means that he experiences 32 light-years/0.8788c = 37.73 years for her 20.
+
+\problem
+\begin{question}
+	For what range of velocities for a particle of mass m can we use the classical expression for kinetic energy $(K = mv^2/2)$ to within an accuracy of 1\%? 
+\end{question}
+Where the relativistic KE equation is:
+$$ KE = mc^2(\gamma - 1) $$
+and the classical KE equation is:
+$$ KE = 1/2 mv^2 $$
+We know that relativistic energy is bigger than classical energy, because the relativistic understanding describes the phenomena that for a non-massless object to accelerate to c would require infinite energy (more than the discrete value that classical physics would predict). \\
+So the classical physics interpretation will be outside 1\% accuracy when it is 0.99 times that of the relativistic equation. \\
+$$ mc^2(\gamma - 1) = 1/.99 \cdot 1/2 \cdot mv^2 $$
+$$ \frac{c^2}{\sqrt{1-v^2/c^2}} - c^2 = 1.0101 \cdot 1/2 \cdot v^2 $$
+$$ \frac{c^2}{\sqrt{1-v^2/c^2}} - c^2 - 1.0101 \cdot 1/2 \cdot v^2 = 0 $$
+
+So we have a polynomial. We can just plug into wolfram alpha to get the roots. We can think of c as being 1 year/lightyear and more or less remove it from the equation, getting an answer that is a fraction of c.\\
+v = 0.115c
+
+\problem
+\begin{question}
+	a.) Find the speed at which an electron's momentum is 90\% larger than its classical momentum.\\
+	b.) Find the speed at which a proton's momentum is 90\% larger than its classical momentum.\\
+\end{question}
+a.)\\
+$$ p = \gamma mv\ relativistic,\ p = mv\ classical $$
+$$ \gamma mv = 1.9 mv \rightarrow \gamma = 1.9 $$
+$$ 1/\sqrt{1-v^2/c^2} = 1.9 $$
+$$ 1/1-v^2/c^2 = 1.9^2 $$
+$$ \frac{1}{1-v^2/c^2} = 1.9^2 $$
+$$ 1-v^2/c^2 = 1.9^{-2} $$
+$$ -v^2/c^2 = -1.9^{-2} + 1 $$
+$$ v = \sqrt{c^2(-1.9^{-2} + 1)} $$
+v = 0.85c \\
+b.)\\
+v = 0.85c, mass cancels out in the first step of this equation.
+
+\newpage
+\problem
+\begin{question}
+A particle of rest energy $mc^2$ is moving with speed v in the positive x direction. The particle decays into two particles, each with rest energy 140 MeV. One particle, with kinetic energy 282 MeV, moves in the positive x direction, and the other particle, with kinetic energy 25 MeV, moves in the negative x direction. What is the rest energy of the original particle and its speed v?  
+\end{question}
+Energy cannot be created or destroyed, and exists in this equation either as particle rest energy or as kinetic energy. For original particle 0, and the decay particles 1 and 2,
+$$ E_0 + KE_0 = E_1 + KE_1 + E_2 + KE_2 $$
+$$ mc^2 - mc^2(\gamma - 1) = 140 + 282 + 140 + 25 $$
+$$ \gamma mc^2= 140 + 282 + 140 + 25 = 587 $$
+
+$ E^2 = (pc)^2 + (mc^2)^2 $ can be used to find the momentums of particles 1 and 2.
+
+$$ (KE_1 + E_1)^2 = (p_1c)^2 + (mc^2)^2 $$
+$$ (p_1c)^2 = (140+282)^2 - (mc^2)^2 $$
+$$ p_1c = \sqrt{422^2 - 140^2} $$
+$$ p_1c = 398.1 MeV $$
+
+$$ (KE_2 + E_2)^2 = (pc)^2 + (mc^2)^2 $$
+$$ (p_2c)^2 = (140+25)^2 - (mc^2)^2 $$
+Particle 2 is moving in the negative x direction, therefore
+$$ p_2c = -\sqrt{165^2 - 140^2} $$
+$$ p_2c = -87.3 MeV $$
+
+The final net momentum is $p_1 + p_2 = 398.1-87.3 = 310.8 MeV$. \\
+The final net energy is 587 MeV. \\
+Because of conservation of energy, this must be equal to the final energy and momentum of particle 0. We can use this to get the rest energy.
+
+$$ E_0^2 = (pc)^2 + (mc^2)^2 $$
+$$ (mc^2)^2 = (E_0)^2 -(pc)^2 $$
+$$ mc^2 = \sqrt{(E_0)^2 -(pc)^2} $$
+$$ mc^2 = \sqrt{(587)^2 -(310.8)^2} $$
+$$ mc^2 = 498 MeV $$
+
+For the speed, we can use
+$$ \gamma mc^2 = 587 $$
+$$ \gamma 498 = 587 $$
+$$ \frac{1}{\sqrt{1 - v^2/c^2}} = 587/498 $$
+$$ \sqrt{1 - v^2/c^2} = 498/587 $$
+$$ 1 - v^2/c^2 = (498/587)^2 $$
+$$ v^2/c^2 = 1 - (498/587)^2 $$
+$$ v^2 = c^2 - c^2(498/587)^2 $$
+$$ v = c\sqrt{1 - (498/587)^2} $$
+$$ v = 0.529c $$
+
+\newpage
+\problem
+\begin{question}
+Energy reaches the upper atmosphere of the Earth from the Sun at a rate of $1.79 \times 10^{17}$ W. If all of this energy were absorbed by the Earth and not re-emitted, how much would the mass of the Earth increase in one year (365 days)?  
+\end{question}
+$$ E = mc^2 + KE $$ We can assume that the kinetic energy does not change and all of the absorbed energy is absorbed as an increase in rest energy.
+$$ \Delta E = \Delta mc^2 = 1.79 \cdot 10^{17} W = 1.79 \cdot 10^{17} J/s \cdot 1 year $$
+$$ \Delta mc^2 = 1.79 \cdot 10^{17} J/s \cdot \frac{60 s}{1 min} \cdot \frac{60 min}{1 h} \cdot \frac{24 h}{1 day} \cdot \frac{365 days}{1 year} = 5.645 \cdot 10^{24} J/year \cdot 1\ year = 5.645 \cdot 10^{24} J $$
+$$ \Delta mc^2 =  5.645 \cdot 10^{24} J \cdot \frac{6.24215 \cdot 10^{12} MeV}{1 J} = 3.523 \cdot 10^{37} MeV $$
+$$ \Delta m = 3.523 \cdot 10^{37} MeV/c^2 $$
+For fun, 1 $MeV/c^2 = 1.79 \cdot 10^{-30},\ 3.523 \cdot 10^{37} MeV/c^2 \cdot 1.79 \cdot 10^{-30} Kg/(MeV/c^2) = 6.307 \cdot 10^6 Kg $
+
+\problem
+\begin{question}
+	Patrick the pole vaulter is running with a 20m long pole toward a 10m long garage with doors at each end. Patrick is running so fast that to an observer O in the rest frame of the garage, the pole appears only 10m long (i.e. the pole would just fit inside the garage). \\
+	a) In the frame of observer O, how fast is Patrick running? \\
+	b) The observer O closes very quickly the doors on both ends of the garage just as Patrick and the pole are inside, and then immediately opens them again so that Patrick can run out on the other end. However, according to Patrick, the garage is moving towards him and is only 5m long. How can Patrick and his 20m pole possibly make it through without hitting a door? Use what you have learned from special relativity to explain the situation, motivated by a calculation.
+\end{question}
+a.) \\
+O observes length contraction of 10m/20m = 1/2. $\gamma = 2 = 1/\sqrt{1 - v^2/c^2} $
+$$ 1/4 = 1 - v^2/c^2 \rightarrow 3/4 = v^2/c^2 \rightarrow v = \sqrt{3}/2c  \approx .886c $$
+
+b.)\\
+I think the two doors here are referring to a door at the entrance and a door at the exit, which are both lined up with Patrick's direction of motion. Going with that, \\
+\\
+the simultaneity equation can be used here to understand that the doors, which are closed at the same time from the perspective of O, do not close at the same time to Patrick. \\
+
+
+$$ \Delta t = \frac{uL/c^2}{\gamma} $$
+Because the garage is moving towards Patrick at the same speed from his resting reference frame as Patrick is moving toward the garage at O's resting reference frame, u = 0.886c, the speed of the garage. \\
+\\
+Here we are given that $L/\gamma$ = 5m, confirming again that $\gamma$ = 2. Thus $\Delta t = 0.866c \cdot 10/2c^2 = 8.66/c s = 2.998 \cdot 10^{-8} s $. Because the door at the end of the garage actually closes a fraction of a second later than the door at the entrance of the garage, Patrick has a chance of making it through. He has to make it 5 m (from his perspective) in 28.89 ns, because the door closed the instant he made it all the way through, and if he's running like a pole vaulter then the pole is in front of him, so he doesn't need to run the full length of the pole to make it out the other door before it closes. \\
+\\
+$ 5 m / 0.866c = 5 m / 2.998 \cdot 10^8 m/s = 16.7 ns$, which is less than 28.9 ns, meaning Patrick actually leaves the garage before the second door is even closed in the first place.
+
+
+\end{document}

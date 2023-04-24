@@ -1,0 +1,240 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{problemnumber}\setcounter{problemnumber}{1}
+\titlespacing\section{0pt}{10pt}{0pt}   % Spacing between Problems
+\titlespacing\subsection{0pt}{5pt}{0pt} % Spacing between Parts
+\newcommand{\problem}[1][-1]{
+    \setcounter{partnumber}{1}
+    \ifnum#1>0
+        \setcounter{problemnumber}{#1}
+    \fi
+    \section*{Problem \arabic{problemnumber}}
+    \stepcounter{problemnumber}
+}
+
+\newcounter{partnumber}\setcounter{partnumber}{1}
+\newcommand{\ppart}[1][-1]{
+    \ifnum#1>0
+        \setcounter{partnumber}{#1}
+    \fi
+    \subsection*{Part \parttype{partnumber}}
+    \stepcounter{partnumber}
+}
+
+\newenvironment{question}{
+    \color{gray}\itshape
+    \vspace{5pt}
+    \begin{tabular}{|p{0.97\linewidth}}
+}{
+    \end{tabular}\\[5pt]
+}
+
+
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength\parindent{0pt}
+\setlength\headheight{30pt}
+\headsep=0.25in
+\pagestyle{fancy}
+\lhead{\ifthenelse{\thepage=1}
+    {\textbf{Trevor Smith} \\ \textbf{\writeday}}
+}
+\chead{\ifthenelse{\thepage=1}
+    {\textbf{\huge{HOMEWORK \hwnumber}}}
+    {\textbf{\large{HOMEWORK \hwnumber}}}
+}
+\rhead{\ifthenelse{\thepage=1}
+    {\textbf{{\course}} \\ \textbf{Professor {\prof}}}
+}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+% \PARTTYPE:
+% \Alph   := "Part A, Part B,  ..."
+% \alph   := "Part a, Part b,  ..."
+% \arabic := "Part 1, Part 2,  ..."
+% \Roman  := "Part I, Part II, ..."
+\newcommand\parttype{\Roman}
+
+% \COURSE:
+\newcommand\course{PHYS 2303}
+
+% \HWNUMBER
+\newcommand\hwnumber{9}
+
+% \SEMESTER
+\newcommand\semester{Spring 2021}
+
+% \PROF
+\newcommand\prof{Skinnari}
+
+% \WRITEDAY
+% \today is date of compilation, replace if writing due date rather than write date
+\newcommand\writeday{\today}
+
+
+
+%  ------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+
+\problem
+\begin{question}
+	(a) Determine the binding energy per ion pair in LiF from the cohesive energy. \\
+	(b) Determine the binding energy per ion pair in LiF from the minimum potential energy at equilibrium separation (i.e. based on lattice parameters). \\
+\end{question}
+A) $B = \frac{E_{coh}}{N_A}$ \\
+$B = 1030\ kJ/mol/6.02 \cdot 10^{23}\ ions/mol = 10.7 eV$\\
+
+B)
+$$B = \frac{\alpha e^2}{4\pi\epsilon_0 R_0} \left(1 - \frac{1}{n} \right) $$
+$$B = \frac{1.7476 \cdot 1.44\ eV \cdot nm}{0.201 nm} \left(1 - \frac{1}{6} \right) $$
+$$ B = 10.433 eV $$
+
+\problem
+\begin{question}
+	Copper has a density of 8.96 g/cm3 and molar mass of 63.5 g/mol. Calculate the center-to-center distance between copper atoms in the fcc structure.
+\end{question}
+
+$ 8.96 g/cm^3 \cdot \frac{1 mol}{64.5 g} = 138914.729 mol / m^3 = 8.365 \cdot 10^{28}\ atoms/m^3$
+The fcc structure contains 4 atoms, 1/2 per face and 1/8 per corner. If $l$ is the length of one edge of the cube, then $5 atoms/l^3 = 8.365 \cdot 10^{28} atoms/m^3$. Therefore,
+$$ l = \left( \frac{5\ atoms}{8.365 \cdot 10^{28}\ atoms/m^3} \right)^{1/3} = 0.391 nm $$
+
+\newpage
+\problem
+\begin{question}
+Follow these steps to estimate the electrical conductivity of silver at temperature T = 300 K.
+The density of silver is ρ = 10.5 g/cm³ and the molar mass is M = 108 g/mol. \\
+(a) Determine the concentration of conduction electrons in silver assuming that each silver atom
+contributes one electron. \\
+(b) Use the equipartition of energy theorem (see e.g. Chapter 1 if you are unfamiliar with this) to
+estimate the average speed of conduction electrons. \\
+(c) Estimate the mean free path of conduction electrons by equating it to the nearest-neighbor
+distance in the lattice. The latter must be estimated based on the numbers provided and the fact that
+metallic silver forms an fcc lattice. \\
+(d) Combine the results of (a-c) to calculate the electrical conductivity. 
+\end{question}
+A)\\ If we treat the free electrons as a gas, given that there is one free electron per Au atom (the two 5s electrons instead fill the 4d level, leaving one left over),
+$$ 10.5\ g/cm^3 \cdot 1\ mol/108\ g = 0.0972\ mol\ electrons/cm^3 $$
+B)\\ $$ v_{av} = \sqrt{\frac{3kT}{m}} = \sqrt{\frac{3(0.0258\ eV)}{0.511 \cdot 10^6 eV/c^2}} = 116,675.785\ m / s = 1.167 \cdot 10^5\ m/s $$
+C) \\
+$ 10.5 g/cm^3 \cdot \frac{1 mol}{108 g} = 97222 mol / m^3 = 5.855 \cdot 10^{28}\ atoms/m^3$
+Given that this is fcc just like problem 2, 
+$$ l = \left( \frac{5\ atoms}{5.855 \cdot 10^{28}\ atoms/m^3} \right)^{1/3} = 0.440 nm $$
+D) \\
+$$ \sigma = \frac{ne^2\tau}{m} $$
+$ \tau = l/v_{av} = 0.440\ nm/1.167 \cdot 10^5\ m/s = 3.77 \cdot 10^{-15} s$ \\
+$ n = 5.855 \cdot 10^{28}\ cm^{-3} $ \\
+$ m = 9.109 \cdot 10^{-31}\ kg $ \\
+$$ \sigma = \frac{(5.855 \cdot 10^{28}\ m^{-3})(1.60 \cdot 10^{-19}\ C)^2(3.77 \cdot 10^{-15} s)}{9.109 \cdot 10^{-31}\ kg} = 6.203\ MS/m $$
+
+
+\newpage
+\problem
+\begin{question}
+(a) Calculate the total nuclear binding energy of ³He and ³H. \\
+(b) Account for any difference of the calculated nuclear binding energies by considering the
+Coulomb interaction of the extra proton of ³He. 
+\end{question}
+
+A) The total nuclear binding energy is the difference in mass between the constituent particles and the whole atom.  \\
+$^3He$:\\
+$$ B = \left( 1(939.57\ MeV/c^2) + 2(938.28\ MeV/c^2) - 2809.4132 MeV / c^2 \right) c^2 =  6.716 MeV $$
+$^3H$:\\
+$$ B = \left( 2(939.57\ MeV/c^2) + 1(938.28\ MeV/c^2) - 2809.4132 MeV / c^2 \right) c^2 =  7.988 MeV $$
+
+B) The difference is due to the two protons in He repelling each other.
+
+
+\problem
+\begin{question}
+	Ordinary potassium contains 0.012\% of the naturally occurring radioactive isotope ⁴⁰K, which has a
+half-life of 1.3×10⁹ year. \\
+(a) What is the activity of 1.0 kg of potassium? \\
+(b) What would have been the fraction of ⁴⁰K in natural potassium 4.5×10⁹ years ago?
+\end{question}
+A) \\
+$$ t_{1/2} \approx \frac{0.693}{\lambda} \rightarrow \lambda = \frac{0.693}{1.3 \cdot 10^9 year} = 1.689 \cdot 10^{-17} Hz $$
+1 kg of potassium is $1\ kg \cdot \frac{1\ mol}{39.098 g} = 25.75 mol\ K$. 25.75mol potassium will contain $25.75\ mol \cdot 0.00012\ mol\ ^{40}K/mol\ K = 0.00307\ mol\ ^{40}K$. 
+$$a = \labmda N = 1.689 \cdot 10^{-17} Hz \cdot 0.00307\ mol \cdot A_N = 31,218\ molecules/second $$
+
+B) \\
+$$ N = N_0 e^{-\lambda t} = 0.00307\ mol \cdot e^{-1.689 \cdot 10^{-17}\ Hz \cdot (-4.5 \cdot 10^9\ years)} = 0.0338\ moles $$
+The mole fraction is then 0.0338/25.75 = 0.13 \%.
+
+\problem
+\begin{question}
+	What is the kinetic energy of the alpha particle that is emitted in the decay of the uranium isotope
+with mass number A = 234?
+\end{question}
+$$ \ce{^{234}U} \rightarrow \ce{^{230}Th} + \ce{^4He} + KE $$
+Replacing each element with its total energy (assuming the main atom is stationary before and after decay):
+$$ 221,722.53 MeV/c^2 \rightarrow 216,141.7 MeV/c^2 + 3,728.4 MeV/c^2 + KE/c^2 $$
+$$ c^2(221,722.53 MeV/c^2 - (216,141.7 MeV/c^2 + 3,728.4 MeV/c^2)) = 1,852 MeV $$
+
+
+\newpage
+\problem 
+\begin{question}
+Compare the recoil energy of a nucleus of mass 200 u that emits: \\
+(a) a 5.0-MeV alpha particle, and \\
+(b) a 5.0-MeV gamma ray?
+\end{question}
+A) \\
+The speed of an alpha particle with 5 MeV KE is (wolfram alpha) 0.05174 c. The momentum will be 192.9 MeV/c. By conservation of momentum, the nucleus will also recoil with the same energy. This one will not be even remotely relativistic, but it will lose 2 Amu by ejecting the alpha particle. 192.9 MeV/c / 198 u = 0.001046 c. Using the equation for kinetic energy, we get 0.1009 MeV.
+
+B) \\
+The momentum of a 5 MeV photon will be 5 MeV/c. Using the same calculation as above, we get KE = 67.8 eV.
+
+\newpage
+\problem
+\begin{question}
+	A fossil bone fragment contains 50 g of carbon and registers a = 5 decays/s of carbon-14 activity.
+Assume that the carbon-14 to carbon-12 isotope ratio in the atmosphere, and consequently within
+living organisms, is constant over time at 1.3×10 ¹². Because carbon-14 decays radioactively with a
+half-life of 1.8×10¹¹ s, the ratio of carbon-14 to carbon-12 in dead organisms decrease over time.\\
+(a) How many carbon-14 isotopes were in the bone fragment when the animal was alive?\\
+(b) Find the decay constant ($\lambda$) of carbon-14.\\
+(c) Determine the age of the bone fragment. 
+\end{question}
+A)\\
+The 50 g of carbon will be split by mole ratio between 14 and 12 is $1.3 \cdot 10^{-12}\ mol\ Carbon-14/1\ mol\ Carbon-12$. The average molecular weight will be (1-1.3e-12)*12 + (1.3e-12)*12 ok yeah it's 12, rounding to any number of meaningful digits.
+$$ 50\ g\ carbon \cdot \frac{1\ mol\ C}{12\ g} \cdot \frac{1.3e-12\ mol\ ^{14}C}{1\ mol\ ^{12}C} = 3.262 \cdot 10^{12}\ molecules\ Carbon-13 $$
+
+B)\\
+$$t_{1/2} = 1/\lambda ln(2) $$
+$t_{1/2} = 1.8 \cdot 10^{11}\ s$\\
+$\lambda = 3.85081767e-12 hertz$
+
+C)\\
+We can find the N number of molecules currently by the expression relating activity, N, and $\lambda$.
+$$ a = -\frac{dN}{dt} = \lambda N $$
+$$ 3.85081767 \cdot 10^{-12} hertz \cdot N = 5\ decays/s \rightarrow N = 1.29842554 \cdot 10^{12}\ molecules\ ^{14}C $$
+By
+$$ N = N_0e^{-\lambda t} $$
+given labmda, $N$, and $N_0$,
+$$ 1.29842554 \cdot 10^{12} = 3.262 \cdot 10^{12}\cdot e^{-3.85081767 \cdot 10^{-12} t} $$
+$$ \lambda t = ln \left(\frac{N}{N_0} \right) \rightarrow t = 7,580\ years $$
+
+
+
+\end{document}

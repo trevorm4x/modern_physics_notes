@@ -1,0 +1,277 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{problemnumber}\setcounter{problemnumber}{1}
+\titlespacing\section{0pt}{10pt}{0pt}   % Spacing between Problems
+\titlespacing\subsection{0pt}{5pt}{0pt} % Spacing between Parts
+\newcommand{\problem}[1][-1]{
+    \setcounter{partnumber}{1}
+    \ifnum#1>0
+        \setcounter{problemnumber}{#1}
+    \fi
+    \section*{Problem \arabic{problemnumber}}
+    \stepcounter{problemnumber}
+}
+
+\newcounter{partnumber}\setcounter{partnumber}{1}
+\newcommand{\ppart}[1][-1]{
+    \ifnum#1>0
+        \setcounter{partnumber}{#1}
+    \fi
+    \subsection*{Part \parttype{partnumber}}
+    \stepcounter{partnumber}
+}
+
+\newenvironment{question}{
+    \color{gray}\itshape
+    \vspace{5pt}
+    \begin{tabular}{|p{0.97\linewidth}}
+}{
+    \end{tabular}\\[5pt]
+}
+
+
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength\parindent{0pt}
+\setlength\headheight{30pt}
+\headsep=0.25in
+\pagestyle{fancy}
+\lhead{\ifthenelse{\thepage=1}
+    {\textbf{Trevor Smith} \\ \textbf{\writeday}}
+}
+\chead{\ifthenelse{\thepage=1}
+    {\textbf{\huge{HOMEWORK \hwnumber}}}
+    {\textbf{\large{HOMEWORK \hwnumber}}}
+}
+\rhead{\ifthenelse{\thepage=1}
+    {\textbf{{\course}} \\ \textbf{Professor {\prof}}}
+}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+% \PARTTYPE:
+% \Alph   := "Part A, Part B,  ..."
+% \alph   := "Part a, Part b,  ..."
+% \arabic := "Part 1, Part 2,  ..."
+% \Roman  := "Part I, Part II, ..."
+\newcommand\parttype{\Roman}
+
+% \COURSE:
+\newcommand\course{PHYS 2303}
+
+% \HWNUMBER
+\newcommand\hwnumber{6}
+
+% \SEMESTER
+\newcommand\semester{Spring 2021}
+
+% \PROF
+\newcommand\prof{Skinnari}
+
+% \WRITEDAY
+% \today is date of compilation, replace if writing due date rather than write date
+\newcommand\writeday{\today}
+
+
+
+%  ------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+\problem
+\begin{question}
+	An electron is trapped inside an infinite potential energy well (one dimensional). The width of the potential energy well is L=0.300 nm.\\
+(a) If the electron is in the ground state (n=1), what is the probability of finding it within 0.100 nm of the left-side wall? \\
+(b) What is the probability if the electron is instead in the 99th excited state (n=100)? \\
+(c) What probability would you expect for a classical particle? How does this compare with your results from (a) and (b)? This is an example of the so-called correspondence principle.
+\end{question}
+A)\\
+The wave function for the particle is 
+$$ \psi(x) = \frac{2}{L} sin \left(\frac{n \pi}{L}x \right) $$ 
+Here:\\
+L = 0.3 nm \\
+n = 1 \\
+The probability of finding the particle in a given region from $x_0\ to\ x_1$ is
+
+$$ \int_{x_0}^{x_1} |\psi(x)|^2 = \frac{2}{L} \int_{x_0}^{x_1} sin^2 \left(\frac{n \pi}{L}x \right)\ dx $$ 
+Where $x_0$ = 0 nm and $x_1$ = 0.1 nm. We can use the sine power-reducing formula:
+$$ \int_{x_0}^{x_1} |\psi(x)|^2 = \frac{2}{2L} \int_{0}^{0.1} 1 - cos \left(\frac{2 n \pi}{L}x \right)\ dx $$ 
+$$ = \frac{1}{L} \left[ \int_{0}^{0.1} 1\ dx  - \int_{0}^{0.1} cos \left(\frac{2 n \pi}{L}x \right)\ dx \right] $$ 
+$$ = \frac{1}{L} \left[ x - \frac{L}{2n \pi} sin \left(\frac{2 n \pi}{L}x \right) \right] \rvert^{.1}_0 $$ 
+$$ = \frac{1}{0.3 nm} \left[ x - \frac{0.3 nm}{2 \pi} sin \left(\frac{2 \pi}{0.3 nm}x \right) \right] \rvert^{.1}_0 $$ 
+$$ = 1/3 - \frac{1}{2 \pi} sin \left(\frac{2 \pi}{3} \right) = 0.1955 $$ 
+
+B)\\
+We can just change n to 100 at the end.
+$$ = \frac{1}{0.3} \left[ x - \frac{0.3}{2* 100 \pi} sin \left(\frac{2 * 100 \pi}{0.3}x \right) \right] \rvert^{.1}_0 $$ 
+$$ = \frac{1}{3} - \frac{1}{2* 100 \pi} sin \left(\frac{2 * 100 \pi}{3} \right) \right] = 0.3320 $$ 
+
+C)\\
+In classical mechanics the probability of finding the particle in a length equal to 1/3 the length of the box is 1/3. The result from part A does not correspond with this probability, but the result from part B does.
+
+
+\newpage
+\problem
+\begin{question}
+A particle is confined to a three-dimensional infinite potential energy well. Sketch an
+energy level diagram that shows the energies (in terms of E ), quantum numbers, and
+degeneracies for the lowest 10 energy levels for this particle. 
+\end{question}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.8\linewidth]{./degenerates.png}
+	\caption{Setup 3}
+\end{figure}
+
+\newpage
+\problem
+\begin{question}
+Consider the quantum harmonic oscillator and its ground state wave function:\\
+(a) Find the average value $<x>$ and the average value $<x^2>$.\\
+(b) Find the uncertainty ∆x using the above. (Hint: see also textbook, end of Section 4.4
++ “extra” notes for Lecture 17 in Canvas.)
+\end{question}
+The wave function of the ground state is
+$$ \psi(x) = A e^{-\alpha x^2} $$
+Where
+$$ A = \frac{m\omega_0}{\bar{h}\pi}^{1/4}  $$
+$$ \alpha = \frac{\omega_0}{2\bar{h}} $$
+THe average value of x is:
+$$ \int_{-\infty}^{\infty} x \psi(x)^2 \ dx$$
+$$ \int_{-\infty}^{\infty} x A e^{-2 \alpha x^2}\ dx $$
+This is an odd function, and the integral will evaluate to zero. \\
+
+The average value of $x^2$ is:
+$$ \int_{-\infty}^{\infty} x^2 \psi(x)^2 \ dx$$
+$$ \int_{-\infty}^{\infty} x^2 A^2 e^{-2 \alpha x^2}\ dx $$
+Where $u = \sqrt{2 \alpha} x $, $du = \sqrt{2 \alpha} dx $ \\
+$x = \frac{u}{\sqrt{2 \alpha}} $, $dx = \frac{du}{\sqrt{2 \alpha}} $ \\
+$$ \frac{A^2}{(\sqrt{2 \alpha})^3} \int_{-\infty}^{\infty} u^2 e^{-u^2}\ dx $$
+the value of the integral is equal to $\frac{\sqrt{\pi}}{4}$. This gives:
+$$ \frac{A^2}{(2 \alpha)^{3/2}} \frac{\sqrt{\pi}}{4}$$
+$$ \left(\frac{m\omega_0}{\bar{h}\pi}\right)^{1/2}  \left(\frac{\omega_0}{2\bar{h}} \right)^{-3/2}  \frac{\sqrt{\pi}}{4}$$ 
+$$ \left(\frac{m\omega_0}{\bar{h}\pi}\right)^{1/2}  \left(\frac{2\bar{h}}{\omega_0} \right)^{3/2}  \frac{\sqrt{\pi}}{4}$$
+$$ \frac{\bar{h}}{\omega_0} \left(\frac{m}{\pi}\right)^{1/2}  \left(2 \right)^{3/2}  \frac{\sqrt{\pi}}{4}$$
+$$ \frac{\bar{h}}{\omega_0} \sqrt{\frac{m}{2}} $$
+
+B)\\
+$$ \Delta x = \sqrt{<x^2> - <x>^2} $$
+$$ \Delta x = \sqrt{\frac{\bar{h}}{\omega_0} \sqrt{\frac{m}{2}} - 0} $$
+$$ \Delta x = \sqrt{\frac{\bar{h}}{\omega_0} \sqrt{\frac{m}{2}}} $$
+
+
+
+\newpage
+\problem
+\begin{question}
+Consider again the quantum harmonic oscillator. The first excited state of the harmonic
+oscillator has a wave function of the form:
+$$ \psi(x) = A x e^{-ax^2} $$
+(a) Similarly as we did in class for the ground-state wave function, find the constant a in the exponential, and the energy E for this (first excited state) wave function. \\
+(b) Find the constant A for the wave function using the normalization condition.
+\end{question}
+$$ \frac{d\psi}{dx} = Ax(-2ax) e^{-ax^2} + A e^{-ax^2}  $$
+$$ \frac{d\psi}{dx} = -2Aax^2 e^{-ax^2} + A e^{-ax^2}  $$
+
+$$ \frac{d^2\psi}{dx^2} = -4 Aax e^{-ax^2} + 4Aa^2x^3 e^{-ax^2} - 2Aax e^{-ax^2} $$
+$$ \frac{d^2\psi}{dx^2} = -6 Aax e^{-ax^2} + 4Aa^2x^3 e^{-ax^2} $$
+$$ \frac{d^2\psi}{dx^2} = A(-6 a + 4a^2x^2)x e^{-ax^2} $$
+The Schrödinger equation is:
+$$ - \frac{\bar{h}^2}{2m} \frac{d^2\psi}{dx^2} + 1/2\ kx^2 \psi(x) = E\psi(x) $$
+Substitute into Schrödinger equation:
+$$ - \frac{\bar{h}^2}{2m}A(-6 a + 4a^2x^2)x e^{-ax^2} + 1/2\ kx^2 A x e^{-ax^2} = EA x e^{-ax^2} $$
+The exponentials cancel out on both sides of the equation.
+$$ - \frac{\bar{h}^2}{2m}(-6 a + 4a^2x^2) + 1/2\ kx^2  = E $$
+We want a solution that is valid for ANY value of x:
+$$  \frac{\bar{h}^2 6a}{2m} - \frac{\bar{h}^2}{2m} 4a^2x^2 + 1/2\ kx^2  = E $$
+$$ - \frac{\bar{h}^2}{2m} 4a^2x^2 + 1/2\ kx^2  = E - \frac{\bar{h}^2 6a}{2m} $$
+$$ \left(1/2\ k- \frac{\bar{h}^2}{2m} 4a^2x^2 \right)x^2  = E - \frac{\bar{h}^2 6a}{2m} $$
+$$ \left(1/2\ k- \frac{\bar{h}^2}{2m} 4a^2x^2 \right)x^2  = E - \frac{\bar{h}^2 6a}{2m} $$
+
+Each side must be equal to zero
+$$ \frac{k}{2} = \frac{\bar{h}^2}{2m} 4a^2 $$
+$$ \frac{km}{4\bar{h}^2} = a^2 $$
+$$ a = \frac{\sqrt{km}}{2\bar{h}} $$
+$$ E = \frac{\bar{h}^2 6a}{2m} $$
+$$ E = \frac{\bar{h}^2 6}{2m}\frac{\sqrt{km}}{2\bar{h}}  $$
+$$ E =3/2 \bar{h} \sqrt{\frac{k}{m}}  $$
+\\
+\newpage
+B)\\
+\[ 1 = \int_{-\infty}^\infty |\psi(x)|^2\ dx \]
+\[ 1 = A^2 \int_{-\infty}^\infty x^2 e^{-2ax^2}\ dx \ \ \ where\ a = \frac{\sqrt{km}}{2\bar{h}} \]
+\[ 1 = A^2 \int_{-\infty}^\infty x^2 e^{-2ax^2}\ dx \ \ \ where\ a = \frac{\sqrt{km}}{2\bar{h}} \]
+
+Where $u = \sqrt{2 \alpha} x $, $du = \sqrt{2 \alpha} dx $ \\
+And $x = \frac{u}{\sqrt{2 \alpha}} $, $dx = \frac{du}{\sqrt{2 \alpha}} $ \\
+$$ 1 =  \frac{A^2}{(\sqrt{2 \alpha})^3} \int_{-\infty}^{\infty} u^2 e^{-u^2}\ dx $$
+$$ 1 =  \frac{A^2}{(\sqrt{2 \alpha})^3} \frac{\sqrt{\pi}}{4} $$
+$$ A^2 =  \frac{4(\sqrt{2 \alpha})^3}{\sqrt{\pi}} $$
+$$ A =  \sqrt[4]{\frac{2}{\pi}} (\sqrt[4]{\alpha})^3 $$
+$$ a = \frac{\omega_0}{2\bar{h}} $$
+$$ A =  \sqrt[4]{\frac{2}{\pi}} \left(\sqrt[4]{\frac{\omega_0}{2\bar{h}}}\right)^3 $$
+$$ A = \sqrt{\pi/2} \left({\frac{2}{\pi}}\right)^{3/4} \left(\frac{\omega_0}{2\bar{h}}\right)^{3/4} $$
+$$ A = \sqrt{\pi/2} \left(\frac{\omega_0}{\bar{h}\pi}\right)^{3/4} $$
+
+
+\newpage
+\problem
+\begin{question}
+	Find the normalization constants B, D in terms of A by applying the 
+	boundary conditions at x=0 for the given equations in the situation of 
+	$E < U_0$.
+\end{question}
+$$\psi_0(0) = B,\ \ \ \psi_1(0) = D $$
+B = D\\
+$$ \frac{d\psi_0}{dx} = A k_0 cos(k_0x) - B k_0 sin(k_0x) $$
+$$ \frac{d\psi_1}{dx} = -k_1 D e^{-k_1x} $$
+$$ \psi'_0(0) = A k_0 $$
+$$ \psi'_1(0) = - Dk_1 $$
+These derivatives must be equivalent
+$$ D = B = - A \frac{k_0}{k_1} $$
+
+\problem
+\begin{question}
+A beam of electrons, each with kinetic energy K = 9.0 keV, is incident on a potential
+energy step of U = 5.0 keV. What fraction of the beam is reflected by the potential?
+\end{question}
+$$ x < 0:\ \Psi_0(x,t) = A'e^{i(k_0x-\omega t)} + B'e^{-i(k_0x+\omega t)} $$
+$$ x \geq 0:\ \Psi_1(x,t) = C'e^{i(k_1x-\omega t)} $$
+D is 0 because it tends towards infinity. \\
+
+At x = 0 the equations must be equivalent, therefore: \\
+$$ A + B = C $$
+The derivatives must also be equivalent:
+$$ k_0 (A - B) = k_1 C $$
+Plugging in:
+$$ k_0 A - k_0 B = k_1 A + k_1 B $$
+$$ k_0 A - k_1 A = k_0 B + k_1 B $$
+$$ A (k_0 - k_1) = B (k_0 + k_1) $$
+
+The reflection coefficient will relate $k_0\ and\ k_1$ by $\frac{|A|^2}{|B|^2}$, where $k_1/k_0 = \frac{U_0 - E)}{\sqrt{E}}$:
+$$ R = \left(\frac{\sqrt{E} - \sqrt{E - U_o}}{\sqrt{E} + \sqrt{E - U_o}} \right)^2 $$
+Where E = 9.0 keV and U = 5.0 keV
+$$ R = \left(\frac{\sqrt{9.0} - \sqrt{9.0 - 5.0}}{\sqrt{9.0} + \sqrt{9.0 - 5.0}} \right)^2 $$
+$$ R = \frac{3 - 2}{3 + 2}^2 $$
+$$ R = \frac{1}{5} ^2 = 1/25 $$
+
+\end{document}

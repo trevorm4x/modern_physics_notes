@@ -1,0 +1,180 @@
+\contentsline {section}{\numberline {1}Lecture \#1}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Syllabus}{1}{}%
+\contentsline {subsubsection}{\numberline {1.1.1}Why Modern Physics?}{1}{}%
+\contentsline {subsubsection}{\numberline {1.1.2}Course Logistics}{1}{}%
+\contentsline {subsection}{\numberline {1.2}Introduction to Special Relativity}{1}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}Galilean Transformations}{1}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}The need for the ether}{2}{}%
+\contentsline {subsubsection}{\numberline {1.2.3}Michelson-Moerley experiment}{2}{}%
+\contentsline {subsubsection}{\numberline {1.2.4}Michelson interferometer}{2}{}%
+\contentsline {subsubsection}{\numberline {1.2.5}Modern-day interferometers}{3}{}%
+\contentsline {section}{\numberline {2}Lecture \#2}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Relativity of Time}{4}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Cosmic Muons}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Relativistic Velocty Addition}{5}{}%
+\contentsline {subsection}{\numberline {2.3}Relatavistic Doppler Shift}{5}{}%
+\contentsline {section}{\numberline {3}Lecture \#3}{5}{}%
+\contentsline {subsection}{\numberline {3.1}Doppler Shift}{6}{}%
+\contentsline {subsection}{\numberline {3.2}Lorentz transformations}{7}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Velocity transformation}{7}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}What would the photon see?}{7}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Simultaneity}{7}{}%
+\contentsline {subsection}{\numberline {3.3}Relatavistic Kinematics}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Relativistic Momentum}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Relativistic Kinetic Energy}{9}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Rest Energy}{10}{}%
+\contentsline {subsubsection}{\numberline {3.3.4}Energy-Momentum Relationship}{11}{}%
+\contentsline {section}{\numberline {4}Lecture \#4}{11}{}%
+\contentsline {subsection}{\numberline {4.1}Examples}{11}{}%
+\contentsline {subsection}{\numberline {4.2}Conservation Laws}{14}{}%
+\contentsline {section}{\numberline {5}Lecture \#5}{14}{}%
+\contentsline {subsection}{\numberline {5.1}The Photoelectric Effect}{14}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Electromagnetic Waves}{14}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Interference \& Diffraction}{15}{}%
+\contentsline {subsubsection}{\numberline {5.1.3}Photoelectric Effect}{15}{}%
+\contentsline {subsubsection}{\numberline {5.1.4}Resulting interpretation of photoelectric effect}{17}{}%
+\contentsline {section}{\numberline {6}Thermal Radiation}{19}{}%
+\contentsline {subsubsection}{\numberline {6.0.1}Experimanetal results}{19}{}%
+\contentsline {subsubsection}{\numberline {6.0.2}Examples}{19}{}%
+\contentsline {subsection}{\numberline {6.1}Black-Body}{20}{}%
+\contentsline {subsection}{\numberline {6.2}Quantum Theory of thermal radiation}{21}{}%
+\contentsline {subsubsection}{\numberline {6.2.1}Cosmic Microwave Background (CMB)}{22}{}%
+\contentsline {section}{\numberline {7}The Compton Effect}{24}{}%
+\contentsline {subsection}{\numberline {7.1}What is a photon?}{26}{}%
+\contentsline {subsubsection}{\numberline {7.1.1}Connection between wave behavior and particle behavior of light}{27}{}%
+\contentsline {section}{\numberline {8}Atoms}{27}{}%
+\contentsline {subsection}{\numberline {8.1}Knowledge of atoms at the time}{27}{}%
+\contentsline {subsubsection}{\numberline {8.1.1}Atomic Model 1904}{27}{}%
+\contentsline {subsection}{\numberline {8.2}Rutherford Scattering}{28}{}%
+\contentsline {subsubsection}{\numberline {8.2.1}Analysis}{28}{}%
+\contentsline {section}{\numberline {9}Lecture \#6}{31}{}%
+\contentsline {subsection}{\numberline {6.1}Line Spectra}{32}{}%
+\contentsline {subsubsection}{\numberline {6.1.1}Experimentally}{33}{}%
+\contentsline {subsubsection}{\numberline {6.1.2}Balmer Series}{33}{}%
+\contentsline {subsection}{\numberline {6.2}Bohr Model}{35}{}%
+\contentsline {subsubsection}{\numberline {6.2.1}Bohr's Proposal}{36}{}%
+\contentsline {subsection}{\numberline {6.3}Connection of Borh's model with line spectra}{37}{}%
+\contentsline {subsubsection}{\numberline {6.3.1}Borh model also explains}{37}{}%
+\contentsline {subsubsection}{\numberline {6.3.2}Caveats}{38}{}%
+\contentsline {subsection}{\numberline {6.4}Franck-Hertz Experiment}{38}{}%
+\contentsline {section}{\numberline {7}Wave-like properties of particles}{38}{}%
+\contentsline {subsection}{\numberline {7.1}De Broglie Wavelength}{38}{}%
+\contentsline {subsection}{\numberline {7.2}Diffraction Experiments}{41}{}%
+\contentsline {subsubsection}{\numberline {7.2.1}Davisson-Germer Experiment}{41}{}%
+\contentsline {subsection}{\numberline {7.3}Double-Slit Experiments}{41}{}%
+\contentsline {subsubsection}{\numberline {7.3.1}Electron Microscope}{43}{}%
+\contentsline {subsection}{\numberline {7.4}More Double-Slit}{43}{}%
+\contentsline {subsection}{\numberline {7.5}Uncertainty Principle}{43}{}%
+\contentsline {subsubsection}{\numberline {7.5.1}Classical Case}{43}{}%
+\contentsline {subsubsection}{\numberline {7.5.2}Heisenberg Uncertainty Relationships}{45}{}%
+\contentsline {subsection}{\numberline {7.6}Heisenberg's Uncertainty Principles}{46}{}%
+\contentsline {subsection}{\numberline {7.7}Difraction Experiment and Uncertainty Principle (and you!)}{48}{}%
+\contentsline {subsection}{\numberline {7.8}Wave Packets}{49}{}%
+\contentsline {subsubsection}{\numberline {7.8.1}Wave Group}{49}{}%
+\contentsline {subsubsection}{\numberline {7.8.2}Forming Wave Packets}{49}{}%
+\contentsline {subsection}{\numberline {7.9}For de Broglie waves}{50}{}%
+\contentsline {section}{\numberline {8}Probabilities}{50}{}%
+\contentsline {subsection}{\numberline {8.1}In matter particles, what is waving?}{50}{}%
+\contentsline {subsection}{\numberline {8.2}Wave function}{50}{}%
+\contentsline {subsection}{\numberline {8.3}Schrödinger Equation}{51}{}%
+\contentsline {subsection}{\numberline {8.4}Waves at Boundaries}{52}{}%
+\contentsline {subsubsection}{\numberline {8.4.1}Continuity at Boundaries}{52}{}%
+\contentsline {subsection}{\numberline {8.5}Particle in a Potential Energy Well}{53}{}%
+\contentsline {subsubsection}{\numberline {8.5.1}Finite Potential Barrier}{53}{}%
+\contentsline {subsubsection}{\numberline {8.5.2}Infinite Potential Barrier}{54}{}%
+\contentsline {subsection}{\numberline {8.6}Normalization of Wave Function}{55}{}%
+\contentsline {section}{\numberline {9}The Schrödinger Equation}{56}{}%
+\contentsline {subsection}{\numberline {9.1}Motivation of the time-independent form of the Schrödinger equation}{56}{}%
+\contentsline {subsection}{\numberline {9.2}Time-dependent Schrödinger equation}{57}{}%
+\contentsline {subsection}{\numberline {9.3}Solving the Schrödinger Equation?}{57}{}%
+\contentsline {subsection}{\numberline {9.4}Back to that Infinite Potential Well}{58}{}%
+\contentsline {subsection}{\numberline {9.5}Stationary States}{59}{}%
+\contentsline {subsection}{\numberline {9.6}Schrödinger Equation for Free Particle}{60}{}%
+\contentsline {subsection}{\numberline {9.7}Finite Potential Energy Well}{61}{}%
+\contentsline {section}{\numberline {10}Lecture \#7}{62}{}%
+\contentsline {section}{\numberline {8}Quantum Harmonic Oscillator}{62}{}%
+\contentsline {subsection}{\numberline {8.1}Harmonic Oscillator \& Probabilities}{64}{}%
+\contentsline {section}{\numberline {9}Potential Energy Steps}{65}{}%
+\contentsline {subsection}{\numberline {9.1}Where E $>$ U}{65}{}%
+\contentsline {subsubsection}{\numberline {9.1.1}Probability Density}{67}{}%
+\contentsline {subsection}{\numberline {9.2}Where E $<$ U}{67}{}%
+\contentsline {subsubsection}{\numberline {9.2.1}Probability Density}{68}{}%
+\contentsline {subsection}{\numberline {9.3}Energy Conservation \& Penetration into Forbidden Region}{68}{}%
+\contentsline {subsection}{\numberline {9.4}Potential Energy Barrier}{69}{}%
+\contentsline {subsubsection}{\numberline {9.4.1}Analogy with Wave Optics}{69}{}%
+\contentsline {section}{\numberline {10}Practical Applications of Quantum Tunneling}{70}{}%
+\contentsline {subsection}{\numberline {10.1}Alpha decay}{70}{}%
+\contentsline {subsection}{\numberline {10.2}Scanning Tunneling Microscope}{70}{}%
+\contentsline {section}{\numberline {11}The Hydrogen Atom}{71}{}%
+\contentsline {subsection}{\numberline {11.1}Angular Momentum and the Hydrogen Atom (and you!)}{73}{}%
+\contentsline {subsection}{\numberline {11.2}Angular Momentum in Quantum Mechanics}{73}{}%
+\contentsline {subsection}{\numberline {11.3}The Angular Momentum Uncertainty Relationships}{75}{}%
+\contentsline {subsubsection}{\numberline {11.3.1}Spherical Polar Coordinates}{75}{}%
+\contentsline {subsection}{\numberline {11.4}Schrödinger Equation in Three Dimensions}{76}{}%
+\contentsline {subsubsection}{\numberline {11.4.1}More on these Quantum Numbers}{77}{}%
+\contentsline {subsubsection}{\numberline {11.4.2}Degeneracy}{77}{}%
+\contentsline {subsection}{\numberline {11.5}Probability Densities}{78}{}%
+\contentsline {subsubsection}{\numberline {11.5.1}Radial Probability Density}{79}{}%
+\contentsline {subsubsection}{\numberline {11.5.2}Angular Probability Density}{80}{}%
+\contentsline {subsection}{\numberline {11.6}Time-Dependence}{80}{}%
+\contentsline {subsection}{\numberline {11.7}Magnetic Moments}{81}{}%
+\contentsline {subsubsection}{\numberline {11.7.1}Stern-Gerlach Experiment}{83}{}%
+\contentsline {subsection}{\numberline {11.8}Intrinsic Spin}{84}{}%
+\contentsline {subsubsection}{\numberline {11.8.1}Energy Levels (Reloaded)}{85}{}%
+\contentsline {subsubsection}{\numberline {11.8.2}Fine Structure (bonus)}{85}{}%
+\contentsline {subsection}{\numberline {11.9}Probability, again?}{86}{}%
+\contentsline {section}{\numberline {12}Many-Electron Atoms}{86}{}%
+\contentsline {subsection}{\numberline {12.1}Pauli's Exclusion Principle}{87}{}%
+\contentsline {subsection}{\numberline {12.2}Shells \& Subshells}{88}{}%
+\contentsline {subsubsection}{\numberline {12.2.1}Periodic Table and Subshells (and You!)}{89}{}%
+\contentsline {subsection}{\numberline {12.3}Electron Screening}{90}{}%
+\contentsline {subsection}{\numberline {12.4}Optical Transitions}{91}{}%
+\contentsline {section}{\numberline {13}Molecular Structure}{91}{}%
+\contentsline {subsection}{\numberline {13.1}Hydrogen Molecule}{91}{}%
+\contentsline {subsubsection}{\numberline {13.1.1}Continuing with hydrogen molecule...}{92}{}%
+\contentsline {subsubsection}{\numberline {13.1.2}Molecules}{94}{}%
+\contentsline {subsection}{\numberline {13.2}Covalent Bonding}{94}{}%
+\contentsline {subsection}{\numberline {13.3}Ionic bonding}{94}{}%
+\contentsline {subsection}{\numberline {13.4}Molecular Vibrations and Rotations}{94}{}%
+\contentsline {subsubsection}{\numberline {13.4.1}Molecular Vibrations}{95}{}%
+\contentsline {subsubsection}{\numberline {13.4.2}Vibrating Diatomic Molecules}{95}{}%
+\contentsline {subsubsection}{\numberline {13.4.3}Molecular Rotations}{96}{}%
+\contentsline {subsubsection}{\numberline {13.4.4}Rotating Diatomic Molecules}{97}{}%
+\contentsline {section}{\numberline {14}Light Amplification by Stimulated Emission of Radiation}{98}{}%
+\contentsline {subsection}{\numberline {14.1}Helium-neon Laser}{100}{}%
+\contentsline {section}{\numberline {15}Bonding in solids}{101}{}%
+\contentsline {subsection}{\numberline {15.1}Ionic Solids}{101}{}%
+\contentsline {subsection}{\numberline {15.2}Covalent Solids}{103}{}%
+\contentsline {subsection}{\numberline {15.3}Metallic Solids}{104}{}%
+\contentsline {section}{\numberline {16}Statistical Physics Detour}{106}{}%
+\contentsline {subsection}{\numberline {16.1}Electrons in Metals and Conduction}{106}{}%
+\contentsline {subsection}{\numberline {16.2}Band Theory of Solids}{108}{}%
+\contentsline {subsection}{\numberline {16.3}Conduction in Metals vs Insulators vs Semiconductors}{109}{}%
+\contentsline {subsubsection}{\numberline {16.3.1}Conduction in metals}{109}{}%
+\contentsline {subsubsection}{\numberline {16.3.2}Conduction in Insulators}{109}{}%
+\contentsline {subsubsection}{\numberline {16.3.3}Conduction in Semiconductors}{109}{}%
+\contentsline {subsection}{\numberline {16.4}Back to Sodium}{110}{}%
+\contentsline {subsection}{\numberline {16.5}Bands}{110}{}%
+\contentsline {subsubsection}{\numberline {16.5.1}Metals}{111}{}%
+\contentsline {subsubsection}{\numberline {16.5.2}Insulators}{111}{}%
+\contentsline {subsubsection}{\numberline {16.5.3}Semiconductors}{112}{}%
+\contentsline {subsubsection}{\numberline {16.5.4}More Complicated Band Structures}{112}{}%
+\contentsline {subsection}{\numberline {16.6}Conduction in Semiconductors}{113}{}%
+\contentsline {subsubsection}{\numberline {16.6.1}Holes}{113}{}%
+\contentsline {subsubsection}{\numberline {16.6.2}Intrinsic Semiconductors}{114}{}%
+\contentsline {subsubsection}{\numberline {16.6.3}Impurities and Doping}{114}{}%
+\contentsline {subsection}{\numberline {16.7}Diodes}{114}{}%
+\contentsline {subsubsection}{\numberline {16.7.1}Diode: Forward-bias configuration}{117}{}%
+\contentsline {subsubsection}{\numberline {16.7.2}Diode: Reverse-bias configuration}{117}{}%
+\contentsline {subsection}{\numberline {16.8}Transistor}{117}{}%
+\contentsline {section}{\numberline {17}Nuclear Physics}{118}{}%
+\contentsline {subsection}{\numberline {17.1}Nuclear Size and Shape}{118}{}%
+\contentsline {subsection}{\numberline {17.2}Nuclear Mass and Binding Energy}{119}{}%
+\contentsline {subsubsection}{\numberline {17.2.1}Binding Energy Per Nucleon}{120}{}%
+\contentsline {subsubsection}{\numberline {17.2.2}Separation Energies}{120}{}%
+\contentsline {subsection}{\numberline {17.3}Nuclear Force}{120}{}%
+\contentsline {subsection}{\numberline {17.4}Stable Nuclei and Radioactive Decays}{121}{}%
+\contentsline {subsubsection}{\numberline {17.4.1}Different Decay Processes}{121}{}%
+\contentsline {subsubsection}{\numberline {17.4.2}Activity and Decay Probabilities}{121}{}%
+\contentsline {subsection}{\numberline {17.5}Alpha Decay}{122}{}%
+\contentsline {subsection}{\numberline {17.6}Beta Decay}{123}{}%

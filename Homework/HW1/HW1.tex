@@ -1,0 +1,195 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{problemnumber}\setcounter{problemnumber}{1}
+\titlespacing\section{0pt}{10pt}{0pt}   % Spacing between Problems
+\titlespacing\subsection{0pt}{5pt}{0pt} % Spacing between Parts
+\newcommand{\problem}[1][-1]{
+    \setcounter{partnumber}{1}
+    \ifnum#1>0
+        \setcounter{problemnumber}{#1}
+    \fi
+    \section*{Problem \arabic{problemnumber}}
+    \stepcounter{problemnumber}
+}
+
+\newcounter{partnumber}\setcounter{partnumber}{1}
+\newcommand{\ppart}[1][-1]{
+    \ifnum#1>0
+        \setcounter{partnumber}{#1}
+    \fi
+    \subsection*{Part \parttype{partnumber}}
+    \stepcounter{partnumber}
+}
+
+\newenvironment{question}{
+    \color{gray}\itshape
+    \vspace{5pt}
+    \begin{tabular}{|p{0.97\linewidth}}
+}{
+    \end{tabular}\\[5pt]
+}
+
+
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength\parindent{0pt}
+\setlength\headheight{30pt}
+\headsep=0.25in
+\pagestyle{fancy}
+\lhead{\ifthenelse{\thepage=1}
+    {\textbf{Trevor Smith} \\ \textbf{\writeday}}
+}
+\chead{\ifthenelse{\thepage=1}
+    {\textbf{\huge{HOMEWORK \hwnumber}}}
+    {\textbf{\large{HOMEWORK \hwnumber}}}
+}
+\rhead{\ifthenelse{\thepage=1}
+    {\textbf{{\course}} \\ \textbf{Professor {\prof}}}
+}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+% \PARTTYPE:
+% \Alph   := "Part A, Part B,  ..."
+% \alph   := "Part a, Part b,  ..."
+% \arabic := "Part 1, Part 2,  ..."
+% \Roman  := "Part I, Part II, ..."
+\newcommand\parttype{\Roman}
+
+% \COURSE:
+\newcommand\course{PHYS 2303}
+
+% \HWNUMBER
+\newcommand\hwnumber{1}
+
+% \SEMESTER
+\newcommand\semester{Spring 2021}
+
+% \PROF
+\newcommand\prof{Skinnari}
+
+% \WRITEDAY
+% \today is date of compilation, replace if writing due date rather than write date
+\newcommand\writeday{\today}
+
+
+
+%  ------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+\problem
+\begin{question}
+	What motivates you to take this course?
+\end{question}
+Because I'm pursuing a challenging degree that includes this course as a requirement, and also because I enjoy challenging courses. From a very young age I wanted to understand as much of physics as possible, and of course modern physics is a major stop towards that, especially after years of limited classical physics.
+
+\problem
+\begin{question}
+	What do you hope to learn in/from this course?
+\end{question}
+The secrets of the universe of course! I can't wait to understand these convoluted and strange hidden truths that took so long for scientists to uncover.
+
+\problem
+\begin{question}
+	\begin{enumerate}
+		\item Write an expression for the time difference between the a light beam travelling horizontally (parallel to the hypothesized ether wind) and a light beam travelling vertically (perpendicular to the ether wind).
+
+		\item This time difference would lead to a phase difference between the beams, producing an interference fringe pattern when the beams are combined at the telescope. In the experiment, the fringe pattern before and after rotating the interferometer by 90$\deg$ so the two beams exchange roles, doubling the time difference what was determined in A, find the fringe shift that was \emph{expected} in this experiment.
+\end{question}
+
+\begin{enumerate}
+	\item
+The light beam travelling along with the ether wind is understood to be travelling at c + v when travelling with and c - v when travelling against the ether wind (v=velocity of ether wind). The light beam travelling across the ether wind will also be moving at c relative to the ether wind, and will have a vertical component slightly less than c. Where $t_0$ is the light beam that does not travel along with the ether wind at any point, and $t_1$ travels along and against the ether wind: \\
+$$  v_0 = c,\ v_{0y} = \sqrt{c^2 - v_{0x}^2} = \sqrt{c^2 - v^2} $$
+$$ t_0 = \frac{2L}{\sqrt{c^2 - v^2}} = \frac{2L}{c}\frac{1}{\sqrt{1 - v^2/c^2}}$$
+$$ t_1 = \frac{L}{c + v} + \frac{L}{c - v} $$
+$$ t_1 = \frac{L(c - v)}{c^2 - v^2} + \frac{L(c + v)}{c^2 - v^2} = \frac{L(c + v + c - v)}{c^2 - v^2} = \frac{2Lc}{c^2 - v^2} = \frac{2L}{c} \frac{1}{1-v^2/c^2} $$
+$$ t_1 - t_0 = \frac{2L}{c} \frac{1}{1-v^2/c^2} - \frac{2L}{c}\frac{1}{\sqrt{1 - v^2/c^2}} = \frac{2L}{c}(\frac{1}{1-v^2/c^2} - \frac{1}{\sqrt{1 - v^2/c^2}}) $$
+
+	\item 
+$$ L = 11\ m $$
+$$ v = 30 km/s = 3.0 \cdot 10^4\ m/s $$
+$$ \lambda = 500 nm = 5.00 \cdot 10^{-7}\ m $$
+$$ \Delta t_{net} = \frac{4L}{c}(\frac{1}{1-v^2/c^2} - \frac{1}{\sqrt{1 - v^2/c^2}}) $$
+
+$$ \Delta \lambda = c(\frac{4L}{c}(\frac{1}{1-v^2/c^2} - \frac{1}{\sqrt{1 - v^2/c^2}})) = 4L(\frac{1}{1-v^2/c^2} - \frac{1}{\sqrt{1 - v^2/c^2}}) $$
+
+Plugging in (calculator)
+$$\Delta \lambda = 2.203 \cdot 10^{-7}\ m = 220\ nm $$
+\end{enumerate}
+
+\problem
+\begin{question}
+	How fast must a rocket move before its length appears to be contracted to one-half its proper length?
+\end{question}
+1/2 proper length $\rightarrow \frac{L}{L_0} = 1/2$
+$$ 1/2 = 1/\gamma \rightarrow \gamma = 2 = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} $$
+$$ 4 = \frac{1}{1-\frac{v^2}{c^2}} \rightarrow 1 - \frac{v^2}{c^2} = 1/4 \rightarrow 3/4 = \frac{v^2}{c^2} \rightarrow \sqrt{3}/2 c = v = 2.596 \cdot 10^8\ m/s $$
+
+\problem
+\begin{question}
+	A particle that moves at 0.998c survives for 1.15 mm. What is the proper lifetime of the particle?
+\end{question}
+From perspective of O', lifespan observed at $\Delta t' = 1.15 \cdot 10^{-3} m / (0.998 \cdot 2.998 
+\cdot 10^8\ m/s) = 3.8435 \cdot 10^{-12} = 3.844\ ps$ \\
+
+$ \Delta t' = \gamma \Delta t_0 \rightarrow 3.844 = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} \Delta t_0\ = 3.844 ps / 15.82 = 0.243 ps $
+
+\problem
+\begin{question}
+	Two sattelites are approaching the Earth from opposite directions. According to an observer on the Earth, sattelite A is moving at a speed of 0.648c and sattelite B at a speed of 0.795c. What is the speed of sattelite A as observed from sattelite B? Vice versa?
+\end{question}
+$$ \frac{v + u}{1 + \frac{vu}{c^2}} = \frac{c(0.648 + 0.795)}{1 + \frac{c^2}{c^2} 0.648 \cdot 0.795} = 0.952 c
+$$
+If you swap u and v in the equation the answer is the same; also, the speeds of the two from each other's perspective is the exact same.
+
+\problem
+\begin{question}
+An astronaut is sent to a star 200 light-years away and at rest w.r.t the Earth. Life support can only keep him alive 20 years.
+	\begin{enumerate}
+		\item   How fast will he have to go to survive the trip?
+		\item   How much time passes on the Earth during the round trip?
+	\end{enumerate}
+\end{question}
+
+\begin{enumerate}
+	\item
+		The distance of the round trip is 400 light-years. However, the travel time must be 
+		20 years. \\
+		From the perspective of the earth, the distance is 400 light-years. From the perspective
+		of the spaceship, it travels $ L = \frac{L_0}{\gamma} $. The
+		distance L will be $L = v' \cdot \Delta t' = v' \cdot 20\ years $ (or $6.307 \cdot 10^8$ s (wolfram alpha)).
+		Also, 400 light-years is $3.784 \cdot 10^{18}$ m (wolfram alpha).
+		(I did these conversions but found out later it was much more convenient to leave the units the same as the problem-statement).\\
+
+
+		$$ v \Delta t' = \frac{L_0}{\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}} = 
+		{L_0}{\sqrt{1-\frac{v^2}{c^2}}} \rightarrow $$
+		$$ v^2 \Delta t'^2 = L_0^2-L_0^2\frac{v^2}{c^2} \rightarrow $$
+		$$ v^2\Delta t'^2 + L_0^2\frac{v^2}{c^2} = L_0^2 \rightarrow $$
+		$$ v^2(\Delta t'^2 + \frac{L_0^2}{c^2}) = L_0^2 \rightarrow $$
+		$$ v^2 = \frac{L_0^2}{\Delta t'^2 + \frac{L_0^2}{c^2}} \rightarrow $$
+		$$ v^2 = \frac{1}{\frac{\Delta t'^2}{L_0^2} + \frac{1}{c^2}} \rightarrow $$
+		$v = 2.994 *10^8 m/s = 0.9987 c$
+	\item
+		From the perspective of the Earth, the rocket travels 0.9987 c. It will take 400/0.9987 c = 400.5 years for the spaceship to complete its journey from the earth's perspective.
+\end{enumerate}
+\end{document}
+

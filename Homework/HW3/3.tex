@@ -1,0 +1,254 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{problemnumber}\setcounter{problemnumber}{1}
+\titlespacing\section{0pt}{10pt}{0pt}   % Spacing between Problems
+\titlespacing\subsection{0pt}{5pt}{0pt} % Spacing between Parts
+\newcommand{\problem}[1][-1]{
+    \setcounter{partnumber}{1}
+    \ifnum#1>0
+        \setcounter{problemnumber}{#1}
+    \fi
+    \section*{Problem \arabic{problemnumber}}
+    \stepcounter{problemnumber}
+}
+
+\newcounter{partnumber}\setcounter{partnumber}{1}
+\newcommand{\ppart}[1][-1]{
+    \ifnum#1>0
+        \setcounter{partnumber}{#1}
+    \fi
+    \subsection*{Part \parttype{partnumber}}
+    \stepcounter{partnumber}
+}
+
+\newenvironment{question}{
+    \color{gray}\itshape
+    \vspace{5pt}
+    \begin{tabular}{|p{0.97\linewidth}}
+}{
+    \end{tabular}\\[5pt]
+}
+
+
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength\parindent{0pt}
+\setlength\headheight{30pt}
+\headsep=0.25in
+\pagestyle{fancy}
+\lhead{\ifthenelse{\thepage=1}
+    {\textbf{Trevor Smith} \\ \textbf{\writeday}}
+}
+\chead{\ifthenelse{\thepage=1}
+    {\textbf{\huge{HOMEWORK \hwnumber}}}
+    {\textbf{\large{HOMEWORK \hwnumber}}}
+}
+\rhead{\ifthenelse{\thepage=1}
+    {\textbf{{\course}} \\ \textbf{Professor {\prof}}}
+}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+% \PARTTYPE:
+% \Alph   := "Part A, Part B,  ..."
+% \alph   := "Part a, Part b,  ..."
+% \arabic := "Part 1, Part 2,  ..."
+% \Roman  := "Part I, Part II, ..."
+\newcommand\parttype{\Roman}
+
+% \COURSE:
+\newcommand\course{PHYS 2303}
+
+% \HWNUMBER
+\newcommand\hwnumber{1}
+
+% \SEMESTER
+\newcommand\semester{Spring 2021}
+
+% \PROF
+\newcommand\prof{Skinnari}
+
+% \WRITEDAY
+% \today is date of compilation, replace if writing due date rather than write date
+\newcommand\writeday{\today}
+
+
+
+%  ------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+\problem
+\begin{question}
+	An FM radio transmitter has a power output of 100 kW and operates at a frequency of 94 MHz.
+How many photons per second does the transmitter emit? 
+\end{question}
+We can assume that all the energy output by the transmitter is converted with 100\% efficiency into photons, and find the energy of one photon at the given frequency. 
+$$ E = h\lambda = 6.63 \cdot 10^{-34} Js \cdot 9.4 \cdot 10^{10} Hz = 6.228 \cdot 10^{-26} J $$
+$$ 100 kW = 1.0 \cdot 10^5 J/s \rightarrow 100 kW \cdot 1\ second = 10^5 J $$
+$$ 10^5 J \cdot \frac{1\ photon}{6.228 10^{-26} J} = 1.61 \cdot 10^{30}\ photons$$ 
+\problem
+\begin{question}
+The photocurrent of a photocell is cut off by a stopping potential of 2.92 V for
+radiation of wavelength 250 nm. Find the work function of the material. 
+\end{question}
+$K_{max} = eV_s $ and $ K_{max} = E_{photon} - \phi = hf - \phi $. This gives\\
+$$ \phi = E_{photon} - K_{max} = hc/\lambda - eV_s $$
+$f = c/\lambda = 2.998 \cdot 10^8/2.5 \cdot 10^-7 = 1.12 \cdot 10^{15} Hz$\\
+$E_{photon} = hf = 6.63 \cdot 10^{-34}Js \cdot 1.12 \cdot 10^{15} Hz = 7.94 \cdot 10^{-19} J $\\
+$K_{max} = eV_s = 1.6 \cdot 10^{-19} C \cdot 2.92 V = 4.68 \cdot 10^{-19} J$\\
+$$ E_{photon} - K_{max} = \phi =  7.94 \cdot 10^{-19} J - 4.68 \cdot 10^{-19} J = 3.26 \cdot 10^{-19} J $$
+
+\problem
+\begin{question}
+Consider the metals lithium, beryllium, and mercury, which have work functions of 2.3 eV, 3.9 eV, and 4.5 eV, respectively. If light of wavelength 300nm is incident on each of these metals, determine:\\
+(a) Which metals exhibit the photoelectric effect? \\
+(b) What is the maximum kinetic energy for the photoelectron in each case? 
+\end{question}
+
+a)\\
+$ K_{max} = E_{photon} - \phi = hf - \phi $
+$$ K_{max} = h \cdot \frac{c}{\lambda} - \phi $$
+$$ K_{max} = 
+4.1357 × 10^-15 eV s \cdot \frac{2.998 \cdot 10^8 m/s}{3.0 * 10^-7 m} - \phi = 4.13 eV - \phi $$
+
+There is no photoelectric effect if the work function is greater than the energy of the photon, or if the kinetic energy of the photoelectron will be less than zero. Therefore, lithium and beryllium will exhibit a photoelectric effect, but mercury will not. \\
+\\
+b)\\
+Lithium, with a work function of 2.3 eV, will produce a photoelectron with maximum energy $K_{max} = 4.13 eV - 2.3 eV = 1.83 eV$.  Beryllium, with a work function of 3.9 eV, will produce a photoelectron with maximum energy $K_{max} = 4.13 eV - 3.9 eV = 0.23 eV$.
+
+\newpage
+\problem
+\begin{question}
+Integrate Planck's formula (intensity as a function of wavelength for black-body radiation) to obtain Stefan's law (describing the total intensity as a function of temperature), and the relationship between Stefan-Boltzmann's constant and Planck's constant.
+\end{question}
+
+$$ I(\lambda) = \frac{2\pi hc^2}{\lambda^5} \cdot \frac{1}{e^{hc/\lambda KT} - 1} $$
+\[\int_0^\infty {I(\lambda)} =\int_0^\infty {\frac{2\pi hc^2}{\lambda^5} \cdot \frac{1}{e^{hc/\lambda KT} - 1}}d\lambda \]
+We want the exponent of e to look like the hint, so we will substitute u\\
+$$ u = \frac{hc}{\lambda KT} $$
+hc and T are constants. Solving for the derivative
+$$ du = -\frac{hc}{T}\lambda^{-2} d\lambda $$
+\[\int_0^\infty {I(\lambda)} = -KT \int_0^\infty {\frac{2\pi c}{\lambda^3} \cdot \frac{1}{e^{hc/\lambda KT} - 1}} \cdot -\frac{hc}{T}\lambda^{-2} d\lambda \]
+\[\int_0^\infty {I(\lambda)} = -KT \int_0^\infty {\frac{2\pi c}{\lambda^3} \cdot \frac{1}{e^u - 1}} du \]
+We can also notice that $u^3 = (\frac{hc}{KT})^3 \lambda^{-3}$, and $u^3(\frac{KT}{hc})^3 = \lambda^{-3}$. Substituting that in, with the constants outside the integral,
+
+\[\int_0^\infty {I(\lambda)} = -\frac{K^4T^4}{h^3c^3} \int_0^\infty {2\pi c u^3 \cdot \frac{1}{e^u - 1}} du \]
+Moving the rest of the constants outside the integral,
+\[\int_0^\infty {I(\lambda)} = -\frac{2\pi K^4T^4}{h^3c^2} \int_0^\infty {u^3 \cdot \frac{1}{e^u - 1}} du \]
+The evaluation of that integral is a given in the question.
+\[\int_0^\infty {I(\lambda)} = -\frac{2\pi K^4T^4}{h^3c^2} \pi^4/15 =-\frac{2\pi^5 K^4T^4}{h^3c^2 15} \]
+Stefan's law gives that $I = \sigma T^4$, which we can plug in to simplify further to 
+\[ \sigma = -\frac{2\pi K^4}{h^3c^2} \pi^4/15 \]
+
+
+\newpage
+\problem
+\begin{question}
+(a) Assuming that the Sun radiates like an ideal thermal source at a temperature of 6000 K, what is the intensity of the solar radiation emitted in the range 530.0 nm to 532.0 nm? \\
+(b) What fraction of the total solar radiation does this represent? 
+\end{question}
+
+a)\\
+$d\lambda = 532 nm - 530 nm = 2nm = 2.0 \cdot 10^{-9}$\\
+$\lambda = 530 nm = 5.30 \cdot 10^{-7} m $ \\
+$T = 6000 K$\\
+
+$$ I(\lambda)d\lambda = \frac{2\pi hc^2}{\lambda^5} \cdot \frac{1}{e^{hc/\lambda KT} - 1}d\lambda $$
+$$ I(\lambda)d\lambda = \frac{2\pi hc^2}{5.30 \cdot 10^{-7}} \cdot \frac{1}{e^{hc/5.30 \cdot 10^{-7} \cdot 6000 \cdot K} - 1}2.0 \cdot 10^{-9} = 1.93 \cdot 10^5 Watts/m^2 $$
+
+b)\\
+Total energy released by the sun I = $\sigma T^4 = 5.67 \cdot 10^{-8} \frac{W}{m^2K^4} \cdot 6000^4 = 7.34 \cdot 10^7 W/m^2 $
+The fraction of total energy is $I_{530-532 nm}/I_{total} = 1.93/734 = $ 0.26\%.
+
+\problem
+\begin{question}
+X-ray photons with wavelength 0.02218 nm are incident on a target and the Compton-scattered photons are observed at 90.0 degrees. \\
+(a) What is the wavelength of the scattered photons? \\
+(b) What is the momentum of the incident photons? \\
+(c) What is the kinetic energy of the scattered electrons? \\
+(d) What is the momentum (magnitude and direction) of the scattered electrons? 
+\end{question}
+
+a)\\
+$$\lambda'= \lambda + \frac{hc}{m_ec^2}(1-cos\theta) $$
+$$ \lambda' = .02218 nm + 0.001240 MeV nm / 0.511 MeV = 0.0246 nm $$
+
+b)\\
+$ p = \frac{h}{\lambda} = \frac{4.136 \cdot 10^{-21} MeV\cdot s}{2.218 \cdot 10^{-24} m} = 0.0559 MeV/c $ \\
+
+c)\\
+$K_e = E - E'$, the difference in photon energy is transferred to the electron. \\
+The momentum of the incident photons was found in part (b). The momentum of the scattered photons can be found using the answer from part (a).\\
+$\lambda' = 0.0246 nm $
+$$ p' = \frac{h}{\lambda} = \frac{4.136 \cdot 10^{-21} MeV\cdot s}{2.46 \cdot 10^{-24} m} = 0.0504 MeV/c $$
+$$ K_e = (p-p')c = (0.0559 MeV/c - 0.0504 MeV/c) c = 0.0055 MeV $$\\
+
+d)\\
+Where:\\
+$p$: the momentum and energy of the incident photon \\
+$p'$: the momentum and energy of the scattered photon \\
+$p_e$: the momentum and energy of the scattered electron \\
+
+Because momentum is conserved and $p'$ is entirely in the y-direction and p is entirely in the x direction, these must be equal to the negative of the y-component of $p_e$ and the x-component of $p_e$ respectively.\\
+The total momentum will be:
+$$ p_e = \sqrt{p^2 + p'^2} = \sqrt{0.0559^2 + 0.0504^2} = 0.0753 MeV/c $$
+The angle will be:
+$$ \phi = arctan(0.0504/0.0559) = 42.04 \deg $$
+
+\newpage
+\problem
+\begin{question}
+An electron is moving in the negative x direction with a speed of 0.95c when it encounters a photon of energy 12.4 keV moving in the positive x direction. Find the energies of the photon and electron after the scattering. 
+\end{question}
+
+The momentum of the photon before collision will be 12.4 keV/c, as for a photon E = pc. \\
+The momentum of the electron before collision will be $511 keV/c^2 \cdot 0.95c \gamma = - 511 keV/c^2 \cdot 0.95c \cdot 3.2  = -1553.4 keV/c$. \\
+The total momentum before collision is equal to 12.4 - 1553.4 = -1541 keV/c. \\
+\\
+
+The total energy of the photon before collision is given at 12.4 keV.\\
+The total energy of the electron before collision is given by $E = \gamma mc^2 = 3.2 * 511 keV/c^2 * c^2 = 1635.2 keV $ \\
+The total energy of both particles before collision is 1,648 keV.\\
+\\
+
+From conservation of momentum:
+$$ -1541\ keV/c = -E_p/c - p_e $$
+$$ 1541\ keV/c = E_p/c + p_e $$
+$$ 1541\ keV = E_p + p_e c $$
+
+From conservation of energy:
+$$ 1648\ keV = E_p + E_e $$ \\
+
+The energy of an electron:
+$$ E_e = \sqrt{(m_ec^2)^2 + (p_ec)^2} $$ \\
+
+Plug in to the equation above:
+$$ 1648 - E_p = \sqrt{(m_ec^2)^2 + (p_ec)^2} $$
+$$ (1648 - E_p)^2 = (m_ec^2)^2 + (p_ec)^2 $$ 
+$$ (1648 - E_p)^2 = (511 keV)^2 + (1541 - E_p)^2 $$\\
+The $E_p^2$'s cancel out:
+$$ 1648^2 - 3295 E_p = 511^2 + 1541^2 - 3082 E_p $$
+$$ 1648^2 - 511^2 - 1541^2 = - 3082 E_p + 3295 E_p $$\\
+
+Energy of photon and electron after scattering:
+$$ E_p = 376 keV $$
+$$ E_e = 1648 - 376 = 1270 keV $$
+
+\end{document}
